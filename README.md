@@ -10,8 +10,10 @@ Static site. No build step, no dependencies, no framework. Two files do the work
 
 | Path | Purpose |
 |---|---|
-| `index.html` | The whole page. Sections: hero, box score, work, selected work, writing, books, show, off the clock, contact. |
-| `styles.css` | Hand-written CSS. Design tokens at the top, then reset, typography, layout, components. |
+| `index.html` | Front page. Sections: hero, box score, what I do, selected work, writing, books, show, off the clock, contact. |
+| `enterprise-seo/index.html` | Service page at `/enterprise-seo/`. Technical foundation, AI answer engines, content architecture, process, operating rules, track record. |
+| `ecommerce-seo/index.html` | Service page at `/ecommerce-seo/`. Catalog and crawl, revenue measurement, cross-border, the Agromarket case in phases. |
+| `styles.css` | Hand-written CSS. Design tokens at the top, then reset, typography, layout, components, service-page components. |
 | `404.html` | Styled not-found page for GitHub Pages. |
 | `assets/` | Portrait image. |
 | `favicon.svg` | Favicon. |
@@ -50,7 +52,10 @@ Everything is plain HTML, so edit it directly.
 - **Stats** — the `.scores` block. One `.score` per number.
 - **Client list** — the `.client-band` list.
 - **Disciplines and selected work** — `.row` blocks: `.row-key` is the label, the
-  `<p>` is the description.
+  `<p>` is the description. Add `.row-more` for a link to a service page.
+- **Service pages** — `.group` wraps a heading plus a `.specs` grid of `.spec`
+  items. `.steps` is the numbered process, `.rules` the numbered operating rules,
+  `.pills` the market list, `.page-nav` the two links at the foot.
 - **Writing** — `.post` links. Newest first.
 - **Books, Show, Off the clock** — one section each, straightforward markup.
 

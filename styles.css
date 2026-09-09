@@ -550,12 +550,17 @@ a {
 }
 
 .client-band {
+  margin-top: 32px;
   display: flex;
   flex-wrap: wrap;
   align-items: baseline;
   gap: 10px 0;
   font-size: clamp(19px, 2.4vw, 26px);
   line-height: 1.15;
+}
+
+.clients .client-band {
+  margin-top: 0;
 }
 
 .client-band li {
@@ -818,7 +823,216 @@ a {
 }
 
 /* --------------------------------------------------------------------------
-   15. Motion
+   15. Service pages
+   -------------------------------------------------------------------------- */
+
+.crumb {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 12px;
+  color: var(--muted);
+}
+
+.crumb a {
+  color: var(--muted);
+  text-decoration: none;
+}
+
+.crumb a:hover {
+  color: var(--lime-text);
+}
+
+.subhero {
+  padding-top: 48px;
+  padding-bottom: 64px;
+}
+
+.subhero-title {
+  margin-top: 20px;
+  font-size: clamp(40px, 8vw, 82px);
+}
+
+.subhero-lede {
+  margin-top: 26px;
+  max-width: 64ch;
+  font-size: 19px;
+}
+
+/* inline "read more" link inside a discipline row */
+.row-more {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 14px;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.09em;
+  color: var(--lime-text);
+  text-decoration: none;
+  border-bottom: 1px solid var(--lime);
+  padding-bottom: 3px;
+}
+
+.row-more:hover {
+  opacity: 0.72;
+}
+
+/* grouped capability blocks */
+.group {
+  margin-top: 64px;
+}
+
+.group-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 8px 20px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid var(--line);
+}
+
+.group-title {
+  font-size: clamp(26px, 4vw, 38px);
+}
+
+.group-note {
+  color: var(--muted);
+}
+
+.specs {
+  margin-top: 32px;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 32px 40px;
+}
+
+.spec-key {
+  font-size: 21px;
+}
+
+.spec p {
+  margin-top: 10px;
+  color: var(--muted);
+}
+
+@media (min-width: 700px) {
+  .specs {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 1000px) {
+  .specs-3 {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+/* numbered operating rules */
+.rules {
+  margin-top: 40px;
+  border-top: 1px solid var(--line);
+}
+
+.rule {
+  display: grid;
+  grid-template-columns: 38px 1fr;
+  gap: 16px;
+  align-items: start;
+  padding: 20px 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.rule-num {
+  padding-top: 4px;
+  color: var(--lime-text);
+}
+
+/* numbered process steps */
+.steps {
+  margin-top: 40px;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 32px;
+}
+
+.step {
+  border-top: 2px solid var(--lime);
+  padding-top: 18px;
+}
+
+.step-num {
+  color: var(--muted);
+}
+
+.step-title {
+  margin-top: 10px;
+  font-size: 24px;
+}
+
+.step p {
+  margin-top: 10px;
+  color: var(--muted);
+}
+
+@media (min-width: 800px) {
+  .steps {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+/* market pills */
+.pills {
+  margin-top: 24px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.pill {
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  padding: 8px 16px;
+  color: var(--muted);
+}
+
+/* sibling-page navigation at the foot of a service page */
+.page-nav {
+  margin-top: 56px;
+  padding-top: 32px;
+  border-top: 1px solid var(--line);
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+}
+
+.page-nav a {
+  text-decoration: none;
+  color: var(--text);
+  border: 1px solid var(--line);
+  border-radius: 2px;
+  padding: 24px;
+  display: block;
+  transition: border-color 0.15s;
+}
+
+.page-nav a:hover {
+  border-color: var(--lime);
+}
+
+.page-nav-title {
+  margin-top: 10px;
+  font-size: 26px;
+}
+
+@media (min-width: 800px) {
+  .page-nav {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+/* --------------------------------------------------------------------------
+   16. Motion
    -------------------------------------------------------------------------- */
 
 @media (prefers-reduced-motion: reduce) {
