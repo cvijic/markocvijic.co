@@ -3,7 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Writing and Books — Marko Cvijić</title>
+<meta name="color-scheme" content="light">
+<title>Writing and Books - Marko Cvijić</title>
 <meta name="author" content="Marko Cvijić">
 <meta name="description" content="Notes from under the dashboard: enterprise SEO, attribution and marketing operations, written from inside live engagements. Plus two books in progress and the Funky Enterprises Show.">
 <link rel="canonical" href="https://markocvijic.co/writing/">
@@ -11,23 +12,25 @@
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Marko Cvijić">
 <meta property="og:url" content="https://markocvijic.co/writing/">
-<meta property="og:title" content="Writing and Books — Marko Cvijić">
-<meta property="og:description" content="Short posts on what the reports are hiding — last-click budgets, share of voice as five equations instead of one, crawl sinkholes inside big catalogs, and what AI traffic is actually worth. No newsletter, no funnel, no gated PDF.">
+<meta property="og:title" content="Writing and Books - Marko Cvijić">
+<meta property="og:description" content="Short posts on what the reports are hiding - last-click budgets, share of voice as five equations instead of one, crawl sinkholes inside big catalogs, and what AI traffic is actually worth. No newsletter, no funnel, no gated PDF.">
 <meta property="og:image" content="https://markocvijic.co/assets/marko-cvijic.jpg">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:site" content="@MarkoCvijic">
 <meta name="twitter:creator" content="@MarkoCvijic">
-<meta name="twitter:title" content="Writing and Books — Marko Cvijić">
-<meta name="twitter:description" content="Short posts on what the reports are hiding — last-click budgets, share of voice as five equations instead of one, crawl sinkholes inside big catalogs, and what AI traffic is actually worth. No newsletter, no funnel, no gated PDF.">
+<meta name="twitter:title" content="Writing and Books - Marko Cvijić">
+<meta name="twitter:description" content="Short posts on what the reports are hiding - last-click budgets, share of voice as five equations instead of one, crawl sinkholes inside big catalogs, and what AI traffic is actually worth. No newsletter, no funnel, no gated PDF.">
 <meta name="twitter:image" content="https://markocvijic.co/assets/marko-cvijic.jpg">
 
 <script>
-/* apply stored theme before first paint */
+/* GitHub Pages cannot issue a server-side redirect, so push http to https here.
+   Remove once "Enforce HTTPS" is enabled in the repository Pages settings. */
 (function () {
-  try {
-    var t = localStorage.getItem("mc-theme");
-    if (t === "light" || t === "dark") document.documentElement.setAttribute("data-theme", t);
-  } catch (e) {}
+  var l = window.location;
+  if (l.protocol === "http:" && l.hostname.indexOf("localhost") === -1 &&
+      l.hostname !== "127.0.0.1") {
+    l.replace("https:" + l.href.substring(l.protocol.length));
+  }
 })();
 </script>
 
@@ -41,7 +44,6 @@
 
 <header class="wrap site-header">
   <a class="brand" href="/">Marko Cvijić<span class="lime">.</span></a>
-  <button class="theme-toggle" type="button" id="theme-toggle" aria-label="Switch colour theme">Theme</button>
   <div class="header-right">
     <nav class="nav mono" aria-label="Primary">
       <a href="/#services">What I do</a>
@@ -72,7 +74,7 @@
     <p class="mono eyebrow">Why any of it exists</p>
     <h2 class="h section-title">What the reports are <span class="lime">hiding.</span></h2>
     <div class="body prose">
-      <p>I write from inside live engagements, which is the only reason the posts are worth reading. Nearly every one of them started as something I had to explain to a client team in a meeting — a number that could not be defended, an attribution model quietly making a decision nobody had signed off, a channel taking credit for demand it did not create.</p>
+      <p>I write from inside live engagements, which is the only reason the posts are worth reading. Nearly every one of them started as something I had to explain to a client team in a meeting - a number that could not be defended, an attribution model quietly making a decision nobody had signed off, a channel taking credit for demand it did not create.</p>
       <p>It is on LinkedIn, most days, in English, for free. No newsletter, no funnel, no gated PDF, no lead magnet. If you want the thinking, take it. If you want it applied to your own numbers, that is what the call is for.</p>
     </div>
   </section>
@@ -172,7 +174,7 @@
   <section id="show" class="wrap section">
     <p class="mono eyebrow">Listen and watch</p>
     <h2 class="h section-title">Funky Enterprises <span class="lime">Show.</span></h2>
-    <p class="body prose">Long conversations with operators who build revenue, not decks. Founders, CROs, marketers and the partners talking about what actually moved the number — starting with the episode where we explain why we killed the agency and built a commercial system practice instead.</p>
+    <p class="body prose">Long conversations with operators who build revenue, not decks. Founders, CROs, marketers and the partners talking about what actually moved the number - starting with the episode where we explain why we killed the agency and built a commercial system practice instead.</p>
     <div class="actions">
       <a class="btn btn-outline" href="https://www.youtube.com/channel/UC0qSXbNRgglmzqdhXdpuM3g" target="_blank" rel="noopener noreferrer">Watch on YouTube</a>
       <a class="textlink" href="https://www.youtube.com/watch?v=z9tpumhujy0" target="_blank" rel="noopener noreferrer">Start with episode 01</a>
@@ -235,27 +237,6 @@
 
   <p class="mono copyright">© 2026 Marko Cvijić / Owned Media Director, Senior Partner and Founder, Funky Enterprises</p>
 </footer>
-
-<script>
-(function () {
-  var root = document.documentElement;
-  var stored = null;
-  try { stored = localStorage.getItem("mc-theme"); } catch (e) {}
-  if (stored === "light" || stored === "dark") root.setAttribute("data-theme", stored);
-
-  var btn = document.getElementById("theme-toggle");
-  if (!btn) return;
-  btn.addEventListener("click", function () {
-    var current = root.getAttribute("data-theme");
-    if (!current) {
-      current = window.matchMedia("(prefers-color-scheme: light)").matches ? "light" : "dark";
-    }
-    var next = current === "dark" ? "light" : "dark";
-    root.setAttribute("data-theme", next);
-    try { localStorage.setItem("mc-theme", next); } catch (e) {}
-  });
-})();
-</script>
 
 </body>
 </html>

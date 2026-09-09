@@ -3,7 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Business Consulting for Commercial Systems — Marko Cvijić</title>
+<meta name="color-scheme" content="light">
+<title>Business Consulting for Commercial Systems - Marko Cvijić</title>
 <meta name="author" content="Marko Cvijić">
 <meta name="description" content="Business consulting and commercial system design. Revenue anatomy, margin leakage, channel dependency, vendor audit, sequencing and governance. Audit-first engagements from a senior partner at Funky Enterprises.">
 <link rel="canonical" href="https://markocvijic.co/business-consulting/">
@@ -11,23 +12,25 @@
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Marko Cvijić">
 <meta property="og:url" content="https://markocvijic.co/business-consulting/">
-<meta property="og:title" content="Business Consulting for Commercial Systems — Marko Cvijić">
+<meta property="og:title" content="Business Consulting for Commercial Systems - Marko Cvijić">
 <meta property="og:description" content="Growth flattened while spend did not, and every channel report still looks fine. I audit the commercial system, find what is load-bearing and what is leaking margin, then sequence what to fix first.">
 <meta property="og:image" content="https://markocvijic.co/assets/marko-cvijic.jpg">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:site" content="@MarkoCvijic">
 <meta name="twitter:creator" content="@MarkoCvijic">
-<meta name="twitter:title" content="Business Consulting for Commercial Systems — Marko Cvijić">
+<meta name="twitter:title" content="Business Consulting for Commercial Systems - Marko Cvijić">
 <meta name="twitter:description" content="Growth flattened while spend did not, and every channel report still looks fine. I audit the commercial system, find what is load-bearing and what is leaking margin, then sequence what to fix first.">
 <meta name="twitter:image" content="https://markocvijic.co/assets/marko-cvijic.jpg">
 
 <script>
-/* apply stored theme before first paint */
+/* GitHub Pages cannot issue a server-side redirect, so push http to https here.
+   Remove once "Enforce HTTPS" is enabled in the repository Pages settings. */
 (function () {
-  try {
-    var t = localStorage.getItem("mc-theme");
-    if (t === "light" || t === "dark") document.documentElement.setAttribute("data-theme", t);
-  } catch (e) {}
+  var l = window.location;
+  if (l.protocol === "http:" && l.hostname.indexOf("localhost") === -1 &&
+      l.hostname !== "127.0.0.1") {
+    l.replace("https:" + l.href.substring(l.protocol.length));
+  }
 })();
 </script>
 
@@ -64,7 +67,6 @@
 
 <header class="wrap site-header">
   <a class="brand" href="/">Marko Cvijić<span class="lime">.</span></a>
-  <button class="theme-toggle" type="button" id="theme-toggle" aria-label="Switch colour theme">Theme</button>
   <div class="header-right">
     <nav class="nav mono" aria-label="Primary">
       <a href="/#services">What I do</a>
@@ -84,7 +86,7 @@
   <section class="wrap subhero">
     <p class="mono crumb"><a href="/">Marko Cvijić</a> <span>/</span> <span>Business consulting</span></p>
     <h1 class="h subhero-title">Business consulting. <span class="lime">Diagnosis first.</span></h1>
-    <p class="body subhero-lede">One senior person accountable for the revenue side of the business, instead of four vendors each accountable for their slice of it. I audit what you have, tell you which parts are load-bearing and which are decorative, and give you an order to fix them in — including the things you should stop paying for entirely.</p>
+    <p class="body subhero-lede">One senior person accountable for the revenue side of the business, instead of four vendors each accountable for their slice of it. I audit what you have, tell you which parts are load-bearing and which are decorative, and give you an order to fix them in - including the things you should stop paying for entirely.</p>
     <div class="actions">
       <a class="btn btn-primary" href="https://calendly.com/funkyenterprises/30-minute-needs-assessment" target="_blank" rel="noopener noreferrer">Book a strategy call</a>
       <a class="btn btn-outline" href="/analytics-attribution/">See the measurement layer</a>
@@ -96,7 +98,7 @@
     <h2 class="h section-title">Growth stalls, and the reports still <span class="lime">look fine.</span></h2>
     <div class="body prose">
       <p>The call usually comes at the same moment. Revenue has flattened or the curve has bent the wrong way, spend has not gone down, and every individual channel report still says the channel is performing. Nobody is lying. Each vendor is optimising the thing they were hired to optimise, and each one is hitting their number. The business is still not growing.</p>
-      <p>That happens because the commercial side of the company was assembled one purchase at a time. An agency for paid, a freelancer for search, a tool for email, a dashboard bolted over the top of all of it. Each arrived with its own definition of a conversion, its own attribution window and its own report. What never got built is the thing that would tell you how a euro entering the top becomes revenue at the bottom — and which of those euros you could stop spending tomorrow without losing anything.</p>
+      <p>That happens because the commercial side of the company was assembled one purchase at a time. An agency for paid, a freelancer for search, a tool for email, a dashboard bolted over the top of all of it. Each arrived with its own definition of a conversion, its own attribution window and its own report. What never got built is the thing that would tell you how a euro entering the top becomes revenue at the bottom - and which of those euros you could stop spending tomorrow without losing anything.</p>
       <p>So the first job is not a campaign. It is finding out what is actually load-bearing in your commercial system, what is decorative, and what is quietly costing you margin every month.</p>
     </div>
   </section>
@@ -141,7 +143,7 @@
       <div class="specs">
         <div class="spec">
           <p class="h spec-key">Position, demand, convert, advocate</p>
-          <p class="body">The four stages the whole system is judged against. Most companies are strong in one, adequate in a second and have never staffed the other two — which is why the strong stage keeps getting more budget without producing more revenue.</p>
+          <p class="body">The four stages the whole system is judged against. Most companies are strong in one, adequate in a second and have never staffed the other two - which is why the strong stage keeps getting more budget without producing more revenue.</p>
         </div>
         <div class="spec">
           <p class="h spec-key">One source of truth</p>
@@ -171,7 +173,7 @@
         </div>
         <div class="spec">
           <p class="h spec-key">Operating cadence</p>
-          <p class="body">A monthly review that examines a small number of things that matter, against a plan, with someone accountable for each — instead of a quarterly deck that reports whatever happened.</p>
+          <p class="body">A monthly review that examines a small number of things that matter, against a plan, with someone accountable for each - instead of a quarterly deck that reports whatever happened.</p>
         </div>
         <div class="spec">
           <p class="h spec-key">In-house capability</p>
@@ -252,7 +254,7 @@
       </article>
       <article class="card">
         <h3 class="h card-title">A poor fit</h3>
-        <p class="body card-body">You want execution capacity for a plan that is already decided and not open to challenge. You want the audit to confirm a conclusion. The budget is small enough that a single competent specialist would serve you better — I will tell you that and point you at one. Or nobody internally can make a decision, in which case no amount of analysis will produce a change.</p>
+        <p class="body card-body">You want execution capacity for a plan that is already decided and not open to challenge. You want the audit to confirm a conclusion. The budget is small enough that a single competent specialist would serve you better - I will tell you that and point you at one. Or nobody internally can make a decision, in which case no amount of analysis will produce a change.</p>
       </article>
     </div>
   </section>
@@ -313,27 +315,6 @@
 
   <p class="mono copyright">© 2026 Marko Cvijić / Owned Media Director, Senior Partner and Founder, Funky Enterprises</p>
 </footer>
-
-<script>
-(function () {
-  var root = document.documentElement;
-  var stored = null;
-  try { stored = localStorage.getItem("mc-theme"); } catch (e) {}
-  if (stored === "light" || stored === "dark") root.setAttribute("data-theme", stored);
-
-  var btn = document.getElementById("theme-toggle");
-  if (!btn) return;
-  btn.addEventListener("click", function () {
-    var current = root.getAttribute("data-theme");
-    if (!current) {
-      current = window.matchMedia("(prefers-color-scheme: light)").matches ? "light" : "dark";
-    }
-    var next = current === "dark" ? "light" : "dark";
-    root.setAttribute("data-theme", next);
-    try { localStorage.setItem("mc-theme", next); } catch (e) {}
-  });
-})();
-</script>
 
 </body>
 </html>

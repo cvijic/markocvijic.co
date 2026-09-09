@@ -3,7 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>About Marko Cvijić — Owned Media Director, Funky Enterprises</title>
+<meta name="color-scheme" content="light">
+<title>About Marko Cvijić - Owned Media Director, Funky Enterprises</title>
 <meta name="author" content="Marko Cvijić">
 <meta name="description" content="Marko Cvijić, business consultant and commercial system partner in Belgrade. Owned Media Director, Senior Partner and Founder at Funky Enterprises. Fifteen years, 100+ organizations, 10+ markets, including the World Economic Forum, the UAE Government and Emirates Global Aluminium.">
 <link rel="canonical" href="https://markocvijic.co/about/">
@@ -11,23 +12,25 @@
 <meta property="og:type" content="profile">
 <meta property="og:site_name" content="Marko Cvijić">
 <meta property="og:url" content="https://markocvijic.co/about/">
-<meta property="og:title" content="About Marko Cvijić — Owned Media Director, Funky Enterprises">
+<meta property="og:title" content="About Marko Cvijić - Owned Media Director, Funky Enterprises">
 <meta property="og:description" content="I hold the paint: the measurement, the attribution and the governance under everything else. Fifteen years across enterprise SEO, ecommerce, paid media oversight, reputation management and go-to-market.">
 <meta property="og:image" content="https://markocvijic.co/assets/marko-cvijic.jpg">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:site" content="@MarkoCvijic">
 <meta name="twitter:creator" content="@MarkoCvijic">
-<meta name="twitter:title" content="About Marko Cvijić — Owned Media Director, Funky Enterprises">
+<meta name="twitter:title" content="About Marko Cvijić - Owned Media Director, Funky Enterprises">
 <meta name="twitter:description" content="I hold the paint: the measurement, the attribution and the governance under everything else. Fifteen years across enterprise SEO, ecommerce, paid media oversight, reputation management and go-to-market.">
 <meta name="twitter:image" content="https://markocvijic.co/assets/marko-cvijic.jpg">
 
 <script>
-/* apply stored theme before first paint */
+/* GitHub Pages cannot issue a server-side redirect, so push http to https here.
+   Remove once "Enforce HTTPS" is enabled in the repository Pages settings. */
 (function () {
-  try {
-    var t = localStorage.getItem("mc-theme");
-    if (t === "light" || t === "dark") document.documentElement.setAttribute("data-theme", t);
-  } catch (e) {}
+  var l = window.location;
+  if (l.protocol === "http:" && l.hostname.indexOf("localhost") === -1 &&
+      l.hostname !== "127.0.0.1") {
+    l.replace("https:" + l.href.substring(l.protocol.length));
+  }
 })();
 </script>
 
@@ -80,7 +83,6 @@
 
 <header class="wrap site-header">
   <a class="brand" href="/">Marko Cvijić<span class="lime">.</span></a>
-  <button class="theme-toggle" type="button" id="theme-toggle" aria-label="Switch colour theme">Theme</button>
   <div class="header-right">
     <nav class="nav mono" aria-label="Primary">
       <a href="/#services">What I do</a>
@@ -100,7 +102,7 @@
   <section class="wrap subhero">
     <p class="mono crumb"><a href="/">Marko Cvijić</a> <span>/</span> <span>About</span></p>
     <h1 class="h subhero-title">I hold the <span class="lime">paint.</span></h1>
-    <p class="body subhero-lede">Marko Cvijić. Business consultant and commercial system partner in Belgrade. Owned Media Director, Senior Partner and Founder at Funky Enterprises — fifteen years across enterprise SEO, ecommerce, paid media oversight, reputation management and go-to-market, for retail, industrial, tech, government and enterprise clients.</p>
+    <p class="body subhero-lede">Marko Cvijić. Business consultant and commercial system partner in Belgrade. Owned Media Director, Senior Partner and Founder at Funky Enterprises - fifteen years across enterprise SEO, ecommerce, paid media oversight, reputation management and go-to-market, for retail, industrial, tech, government and enterprise clients.</p>
     <div class="actions">
       <a class="btn btn-primary" href="https://calendly.com/funkyenterprises/30-minute-needs-assessment" target="_blank" rel="noopener noreferrer">Book a strategy call</a>
       <a class="btn btn-outline" href="/business-consulting/">How the work runs</a>
@@ -163,7 +165,7 @@
     <h2 class="h section-title">What I actually <span class="lime">do all day.</span></h2>
     <div class="body prose">
       <p>Owned Media Director, Senior Partner and Founder at <a class="inlink" href="https://funky.enterprises/" target="_blank" rel="noopener noreferrer">Funky Enterprises</a>. My title inside the firm is the enterprise SEO and paid media oversight executive, which in practice means I own the two things that consume the most budget and produce the most argument: what organic search is worth, and whether the ad spend can be defended.</p>
-      <p>Underneath both sits the same layer — verified measurement, honest attribution, and a governance process so it does not decay three months after handover. On top of it I build the AI-powered semi-autonomous systems that let a small team run operations that would otherwise need a department. That ordering matters: automation on an unverified data layer produces wrong decisions faster, and I have seen what that costs.</p>
+      <p>Underneath both sits the same layer - verified measurement, honest attribution, and a governance process so it does not decay three months after handover. On top of it I build the AI-powered semi-autonomous systems that let a small team run operations that would otherwise need a department. That ordering matters: automation on an unverified data layer produces wrong decisions faster, and I have seen what that costs.</p>
       <p>Funky Enterprises is a commercial system partner, not an agency. Five senior operators, no employees, no juniors learning on a client's account. Every engagement opens with a paid audit, we own the strategy and the build, and where the model fits we would rather share in what the system produces than bill by the hour. Sharper, not bigger.</p>
     </div>
   </section>
@@ -195,7 +197,7 @@
       </div>
       <div class="row">
         <div class="mono row-key">Teams and reputation</div>
-        <p class="body">Led multiple cross-functional teams across markets, and ran reputation management campaigns for high-profile individuals — work where the measurement matters most and gets discussed least.</p>
+        <p class="body">Led multiple cross-functional teams across markets, and ran reputation management campaigns for high-profile individuals - work where the measurement matters most and gets discussed least.</p>
         <a class="row-more" href="/reputation-management/">Reputation management →</a>
       </div>
     </div>
@@ -353,27 +355,6 @@
 
   <p class="mono copyright">© 2026 Marko Cvijić / Owned Media Director, Senior Partner and Founder, Funky Enterprises</p>
 </footer>
-
-<script>
-(function () {
-  var root = document.documentElement;
-  var stored = null;
-  try { stored = localStorage.getItem("mc-theme"); } catch (e) {}
-  if (stored === "light" || stored === "dark") root.setAttribute("data-theme", stored);
-
-  var btn = document.getElementById("theme-toggle");
-  if (!btn) return;
-  btn.addEventListener("click", function () {
-    var current = root.getAttribute("data-theme");
-    if (!current) {
-      current = window.matchMedia("(prefers-color-scheme: light)").matches ? "light" : "dark";
-    }
-    var next = current === "dark" ? "light" : "dark";
-    root.setAttribute("data-theme", next);
-    try { localStorage.setItem("mc-theme", next); } catch (e) {}
-  });
-})();
-</script>
 
 </body>
 </html>

@@ -3,14 +3,18 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Page not found — Marko Cvijić</title>
+<meta name="color-scheme" content="light">
+<title>Page not found - Marko Cvijić</title>
 <meta name="robots" content="noindex">
 <script>
+/* GitHub Pages cannot issue a server-side redirect, so push http to https here.
+   Remove once "Enforce HTTPS" is enabled in the repository Pages settings. */
 (function () {
-  try {
-    var t = localStorage.getItem("mc-theme");
-    if (t === "light" || t === "dark") document.documentElement.setAttribute("data-theme", t);
-  } catch (e) {}
+  var l = window.location;
+  if (l.protocol === "http:" && l.hostname.indexOf("localhost") === -1 &&
+      l.hostname !== "127.0.0.1") {
+    l.replace("https:" + l.href.substring(l.protocol.length));
+  }
 })();
 </script>
 <link rel="icon" type="image/svg+xml" href="/favicon.svg">
@@ -28,7 +32,7 @@
 <main class="wrap section" style="min-height:52vh">
   <p class="mono eyebrow">Error 404</p>
   <h1 class="h section-title">This one is not in the <span class="lime">box score.</span></h1>
-  <p class="body muted lede">The page you asked for does not exist, or it moved. Nothing tragic — the rest of the site is one click away.</p>
+  <p class="body muted lede">The page you asked for does not exist, or it moved. Nothing tragic - the rest of the site is one click away.</p>
   <div class="actions">
     <a class="btn btn-primary" href="/">Back to the front page</a>
     <a class="textlink" href="mailto:mc@funky.enterprises">Tell me what broke</a>

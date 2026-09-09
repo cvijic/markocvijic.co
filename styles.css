@@ -9,14 +9,14 @@
    -------------------------------------------------------------------------- */
 
 :root {
-  --bg: #0b0b0c;
-  --surface: #141517;
-  --line: #26282b;
-  --text: #f2f1eb;
-  --muted: #a3a69b;
+  --bg: #f3f3ee;
+  --surface: #ffffff;
+  --line: #dcddd4;
+  --text: #111210;
+  --muted: #5e6158;
   --lime: #d4ff00;
-  --lime-text: #d4ff00;
-  --logo-filter: brightness(0) invert(1);
+  --lime-text: #4f6b00;
+  --logo-filter: brightness(0);
 
   --wrap: 1120px;
   --gutter: 24px;
@@ -24,40 +24,6 @@
   --font-head: "Barlow Condensed", "Arial Narrow", ui-sans-serif, sans-serif;
   --font-body: "IBM Plex Sans", ui-sans-serif, system-ui, sans-serif;
   --font-mono: "IBM Plex Mono", ui-monospace, "SFMono-Regular", monospace;
-}
-
-@media (prefers-color-scheme: light) {
-  :root {
-    --bg: #f3f3ee;
-    --surface: #ffffff;
-    --line: #dcddd4;
-    --text: #111210;
-    --muted: #5e6158;
-    --lime: #d4ff00;
-    --lime-text: #4f6b00;
-    --logo-filter: brightness(0);
-  }
-}
-
-/* explicit override via toggle */
-:root[data-theme="dark"] {
-  --bg: #0b0b0c;
-  --surface: #141517;
-  --line: #26282b;
-  --text: #f2f1eb;
-  --muted: #a3a69b;
-  --lime-text: #d4ff00;
-  --logo-filter: brightness(0) invert(1);
-}
-
-:root[data-theme="light"] {
-  --bg: #f3f3ee;
-  --surface: #ffffff;
-  --line: #dcddd4;
-  --text: #111210;
-  --muted: #5e6158;
-  --lime-text: #4f6b00;
-  --logo-filter: brightness(0);
 }
 
 /* --------------------------------------------------------------------------
@@ -313,16 +279,7 @@ a {
   text-decoration: none;
 }
 
-.brand {
-  order: 1;
-}
-
-.theme-toggle {
-  order: 2;
-}
-
 .header-right {
-  order: 3;
   display: flex;
   flex-wrap: wrap;
   align-items: center;
@@ -349,35 +306,10 @@ a {
   opacity: 0.7;
 }
 
-.theme-toggle {
-  appearance: none;
-  background: none;
-  border: 1px solid var(--line);
-  border-radius: 2px;
-  color: var(--muted);
-  cursor: pointer;
-  font-family: var(--font-mono);
-  font-size: 11px;
-  letter-spacing: 0.09em;
-  text-transform: uppercase;
-  padding: 8px 10px;
-  line-height: 1;
-  transition: color 0.15s, border-color 0.15s;
-}
-
-.theme-toggle:hover {
-  color: var(--text);
-  border-color: var(--lime);
-}
-
 @media (min-width: 900px) {
   .header-right {
-    order: 2;
     width: auto;
     margin-left: auto;
-  }
-  .theme-toggle {
-    order: 3;
   }
   .header-cta {
     display: inline-flex;
@@ -406,10 +338,16 @@ a {
   max-width: 54ch;
 }
 
+/* portrait plus the credit line that sits under it */
+.hero-aside {
+  display: grid;
+  gap: 18px;
+  align-content: start;
+}
+
 .hero-role {
-  margin-top: 20px;
   max-width: 56ch;
-  font-size: 15px;
+  font-size: 14px;
   line-height: 1.65;
 }
 

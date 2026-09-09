@@ -3,7 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Marko Cvijić — Business Consultant & Commercial System Partner</title>
+<meta name="color-scheme" content="light">
+<title>Marko Cvijić - Business Consultant & Commercial System Partner</title>
 <meta name="author" content="Marko Cvijić">
 <meta name="description" content="Business consultant and commercial system partner. Enterprise SEO, ecommerce SEO, paid media oversight for large ad spends, reputation management for high-profile figures, and go-to-market for industrial and tech firms. Senior Partner and Founder at Funky Enterprises.">
 <link rel="canonical" href="https://markocvijic.co/">
@@ -11,23 +12,25 @@
 <meta property="og:type" content="profile">
 <meta property="og:site_name" content="Marko Cvijić">
 <meta property="og:url" content="https://markocvijic.co/">
-<meta property="og:title" content="Marko Cvijić — Business Consultant & Commercial System Partner">
-<meta property="og:description" content="I take the revenue side of a business — search, paid media, reputation, go-to-market — and turn it into one system that can be audited, governed and scaled. Fifteen years, 100+ organizations, 10+ markets.">
+<meta property="og:title" content="Marko Cvijić - Business Consultant & Commercial System Partner">
+<meta property="og:description" content="I take the revenue side of a business - search, paid media, reputation, go-to-market - and turn it into one system that can be audited, governed and scaled. Fifteen years, 100+ organizations, 10+ markets.">
 <meta property="og:image" content="https://markocvijic.co/assets/marko-cvijic.jpg">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:site" content="@MarkoCvijic">
 <meta name="twitter:creator" content="@MarkoCvijic">
-<meta name="twitter:title" content="Marko Cvijić — Business Consultant & Commercial System Partner">
-<meta name="twitter:description" content="I take the revenue side of a business — search, paid media, reputation, go-to-market — and turn it into one system that can be audited, governed and scaled. Fifteen years, 100+ organizations, 10+ markets.">
+<meta name="twitter:title" content="Marko Cvijić - Business Consultant & Commercial System Partner">
+<meta name="twitter:description" content="I take the revenue side of a business - search, paid media, reputation, go-to-market - and turn it into one system that can be audited, governed and scaled. Fifteen years, 100+ organizations, 10+ markets.">
 <meta name="twitter:image" content="https://markocvijic.co/assets/marko-cvijic.jpg">
 
 <script>
-/* apply stored theme before first paint */
+/* GitHub Pages cannot issue a server-side redirect, so push http to https here.
+   Remove once "Enforce HTTPS" is enabled in the repository Pages settings. */
 (function () {
-  try {
-    var t = localStorage.getItem("mc-theme");
-    if (t === "light" || t === "dark") document.documentElement.setAttribute("data-theme", t);
-  } catch (e) {}
+  var l = window.location;
+  if (l.protocol === "http:" && l.hostname.indexOf("localhost") === -1 &&
+      l.hostname !== "127.0.0.1") {
+    l.replace("https:" + l.href.substring(l.protocol.length));
+  }
 })();
 </script>
 
@@ -80,7 +83,6 @@
 
 <header class="wrap site-header">
   <a class="brand" href="/">Marko Cvijić<span class="lime">.</span></a>
-  <button class="theme-toggle" type="button" id="theme-toggle" aria-label="Switch colour theme">Theme</button>
   <div class="header-right">
     <nav class="nav mono" aria-label="Primary">
       <a href="/#services">What I do</a>
@@ -102,7 +104,6 @@
       <p class="mono eyebrow">Belgrade, Serbia / business consultant and commercial system partner / 10+ markets</p>
       <h1 class="h hero-title">I run the commercial side of the business, <span class="lime">end to end.</span></h1>
       <p class="body hero-lede">Search, paid media, reputation and go-to-market are usually bought as four separate things from four separate vendors, and nobody owns the number they are supposed to move together. I take the revenue side of a company and rebuild it as one system: audited first, governed while it runs, and answerable to the P&amp;L rather than to a dashboard.</p>
-      <p class="muted hero-role">Owned Media Director, Senior Partner and Founder at Funky Enterprises. Fifteen years across enterprise SEO, ecommerce, paid media oversight, reputation management and go-to-market — for retail, industrial, tech, government and enterprise clients.</p>
       <div class="actions">
         <a class="btn btn-primary" href="https://calendly.com/funkyenterprises/30-minute-needs-assessment" target="_blank" rel="noopener noreferrer">Book a strategy call</a>
         <a class="btn btn-outline" href="#services">What I actually do</a>
@@ -110,10 +111,13 @@
       </div>
       <p class="mono muted hero-note">Thirty minutes, no pitch. Every engagement opens with an audit, so the first conversation is diagnostic, not a sales call.</p>
     </div>
-    <figure class="portrait">
-      <img src="/assets/marko-cvijic.jpg" alt="Marko Cvijić" width="800" height="800" loading="eager">
-      <figcaption class="mono">Center · No. 5</figcaption>
-    </figure>
+    <div class="hero-aside">
+      <figure class="portrait">
+        <img src="/assets/marko-cvijic.jpg" alt="Marko Cvijić" width="800" height="800" loading="eager">
+        <figcaption class="mono">Center · No. 5</figcaption>
+      </figure>
+      <p class="muted hero-role">Owned Media Director, Senior Partner and Founder at Funky Enterprises. Fifteen years across enterprise SEO, ecommerce, paid media oversight, reputation management and go-to-market - for retail, industrial, tech, government and enterprise clients.</p>
+    </div>
   </section>
 
   <!-- BOX SCORE -->
@@ -196,13 +200,13 @@
       <a class="svc" href="/ecommerce-seo/">
         <p class="mono svc-num">03</p>
         <h3 class="h svc-title">Ecommerce SEO</h3>
-        <p class="body">Catalog-scale search for retailers and marketplaces. Faceted navigation, product architecture, feeds, cross-border — reported in revenue, not rankings.</p>
+        <p class="body">Catalog-scale search for retailers and marketplaces. Faceted navigation, product architecture, feeds, cross-border - reported in revenue, not rankings.</p>
         <span class="svc-go">Read more →</span>
       </a>
       <a class="svc" href="/paid-media-oversight/">
         <p class="mono svc-num">04</p>
         <h3 class="h svc-title">Paid media oversight</h3>
-        <p class="body">Governance over large ad spends. Not another hand on the bidding — the accountability layer above it, verifying the signal your bidding is actually learning from.</p>
+        <p class="body">Governance over large ad spends. Not another hand on the bidding - the accountability layer above it, verifying the signal your bidding is actually learning from.</p>
         <span class="svc-go">Read more →</span>
       </a>
       <a class="svc" href="/reputation-management/">
@@ -225,7 +229,7 @@
       </a>
     </div>
 
-    <p class="body prose">The work runs through <a class="inlink" href="https://funky.enterprises/" target="_blank" rel="noopener noreferrer">Funky Enterprises</a>, the commercial system partner I co-founded — five senior operators, no employees, no juniors learning on your account. We own the strategy and the build, and we would rather share in what the system produces than bill you by the hour.</p>
+    <p class="body prose">The work runs through <a class="inlink" href="https://funky.enterprises/" target="_blank" rel="noopener noreferrer">Funky Enterprises</a>, the commercial system partner I co-founded - five senior operators, no employees, no juniors learning on your account. We own the strategy and the build, and we would rather share in what the system produces than bill you by the hour.</p>
   </section>
 
   <!-- CASE -->
@@ -291,7 +295,7 @@
     <h2 class="h section-title">Why the <span class="lime">center.</span></h2>
     <div class="teaser">
       <div>
-        <p class="body">Every partner in the firm got a position on the floor. I am the center, number five. I hold the paint: the measurement, the attribution, the governance under everything else. Nobody applauds the center — a rebound never makes the highlight reel.</p>
+        <p class="body">Every partner in the firm got a position on the floor. I am the center, number five. I hold the paint: the measurement, the attribution, the governance under everything else. Nobody applauds the center - a rebound never makes the highlight reel.</p>
       </div>
       <div>
         <p class="body">But no offense runs without someone holding the back of it down, and no play works if the paint is open. It is the same instinct in the work: I would rather own the unglamorous layer everyone assumes is already handled, and be the person in the room who can say what a number means and then defend it when the answer is inconvenient.</p>
@@ -347,27 +351,6 @@
 
   <p class="mono copyright">© 2026 Marko Cvijić / Owned Media Director, Senior Partner and Founder, Funky Enterprises</p>
 </footer>
-
-<script>
-(function () {
-  var root = document.documentElement;
-  var stored = null;
-  try { stored = localStorage.getItem("mc-theme"); } catch (e) {}
-  if (stored === "light" || stored === "dark") root.setAttribute("data-theme", stored);
-
-  var btn = document.getElementById("theme-toggle");
-  if (!btn) return;
-  btn.addEventListener("click", function () {
-    var current = root.getAttribute("data-theme");
-    if (!current) {
-      current = window.matchMedia("(prefers-color-scheme: light)").matches ? "light" : "dark";
-    }
-    var next = current === "dark" ? "light" : "dark";
-    root.setAttribute("data-theme", next);
-    try { localStorage.setItem("mc-theme", next); } catch (e) {}
-  });
-})();
-</script>
 
 </body>
 </html>

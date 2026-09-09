@@ -3,7 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Paid Media Oversight for Large Ad Spends — Governance, Not Execution | Marko Cvijić</title>
+<meta name="color-scheme" content="light">
+<title>Paid Media Oversight for Large Ad Spends - Governance, Not Execution | Marko Cvijić</title>
 <meta name="author" content="Marko Cvijić">
 <meta name="description" content="Independent oversight and governance for large ad budgets. Conversion signal verification, match rate audits, incrementality, agency oversight and budget allocation with written rationale. Not campaign management.">
 <link rel="canonical" href="https://markocvijic.co/paid-media-oversight/">
@@ -11,23 +12,25 @@
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Marko Cvijić">
 <meta property="og:url" content="https://markocvijic.co/paid-media-oversight/">
-<meta property="og:title" content="Paid Media Oversight for Large Ad Spends — Governance, Not Execution | Marko Cvijić">
+<meta property="og:title" content="Paid Media Oversight for Large Ad Spends - Governance, Not Execution | Marko Cvijić">
 <meta property="og:description" content="Independent governance for large ad spends. I verify the signal your bidding learns from, hold the agency to a standard, and give the person who owns the P&L a number they can defend.">
 <meta property="og:image" content="https://markocvijic.co/assets/marko-cvijic.jpg">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:site" content="@MarkoCvijic">
 <meta name="twitter:creator" content="@MarkoCvijic">
-<meta name="twitter:title" content="Paid Media Oversight for Large Ad Spends — Governance, Not Execution | Marko Cvijić">
+<meta name="twitter:title" content="Paid Media Oversight for Large Ad Spends - Governance, Not Execution | Marko Cvijić">
 <meta name="twitter:description" content="Independent governance for large ad spends. I verify the signal your bidding learns from, hold the agency to a standard, and give the person who owns the P&L a number they can defend.">
 <meta name="twitter:image" content="https://markocvijic.co/assets/marko-cvijic.jpg">
 
 <script>
-/* apply stored theme before first paint */
+/* GitHub Pages cannot issue a server-side redirect, so push http to https here.
+   Remove once "Enforce HTTPS" is enabled in the repository Pages settings. */
 (function () {
-  try {
-    var t = localStorage.getItem("mc-theme");
-    if (t === "light" || t === "dark") document.documentElement.setAttribute("data-theme", t);
-  } catch (e) {}
+  var l = window.location;
+  if (l.protocol === "http:" && l.hostname.indexOf("localhost") === -1 &&
+      l.hostname !== "127.0.0.1") {
+    l.replace("https:" + l.href.substring(l.protocol.length));
+  }
 })();
 </script>
 
@@ -64,7 +67,6 @@
 
 <header class="wrap site-header">
   <a class="brand" href="/">Marko Cvijić<span class="lime">.</span></a>
-  <button class="theme-toggle" type="button" id="theme-toggle" aria-label="Switch colour theme">Theme</button>
   <div class="header-right">
     <nav class="nav mono" aria-label="Primary">
       <a href="/#services">What I do</a>
@@ -97,7 +99,7 @@
     <div class="body prose">
       <p>A large ad budget almost never fails because the bidding was set up badly. It fails because nobody above the bidding is accountable for it. The agency reports the metrics that make the agency look effective. The platform reports the conversions the platform is allowed to claim. Finance sees a cost line. Somewhere between those three sits the actual answer, and it is nobody's job to produce it.</p>
       <p>The pattern I find in audits is consistent. Smart Bidding is optimising toward a conversion action that no longer fires. A primary conversion was imported from an analytics event eighteen months ago and the site stopped sending it after a replatform. The match rate between the ad platform and the analytics property is low enough that half the signal is missing, and the algorithm is learning confidently from the half that remains. None of that shows up as a broken campaign. It shows up as spend that stops producing and a report that cannot explain why.</p>
-      <p>This is not another pair of hands on the account. It is the accountability layer above it — verification of the signal your bidding learns from, and an owner for the number.</p>
+      <p>This is not another pair of hands on the account. It is the accountability layer above it - verification of the signal your bidding learns from, and an owner for the number.</p>
     </div>
   </section>
 
@@ -119,7 +121,7 @@
         </div>
         <div class="spec">
           <p class="h spec-key">Match rate verification</p>
-          <p class="body">How much of the platform's data actually reconciles with your analytics and your back end. Under ninety per cent triggers a full attribution audit before I will comment on performance. For B2B with long cycles the acceptable floor is lower — around forty-six per cent is normal there, and treating that as a fault wastes a month.</p>
+          <p class="body">How much of the platform's data actually reconciles with your analytics and your back end. Under ninety per cent triggers a full attribution audit before I will comment on performance. For B2B with long cycles the acceptable floor is lower - around forty-six per cent is normal there, and treating that as a fault wastes a month.</p>
         </div>
         <div class="spec">
           <p class="h spec-key">Enhanced conversions and consent</p>
@@ -178,7 +180,7 @@
       </div>
       <div class="rule">
         <p class="mono rule-num">02</p>
-        <p class="body">A match rate below ninety per cent triggers an attribution audit — with the exception of long-cycle B2B, where the realistic benchmark is far lower and the audit target is consistency instead.</p>
+        <p class="body">A match rate below ninety per cent triggers an attribution audit - with the exception of long-cycle B2B, where the realistic benchmark is far lower and the audit target is consistency instead.</p>
       </div>
       <div class="rule">
         <p class="mono rule-num">03</p>
@@ -210,7 +212,7 @@
       </article>
       <article class="card">
         <h3 class="h card-title">A poor fit</h3>
-        <p class="body card-body">You want someone to take over day-to-day campaign management — that is your agency's job and I am not competing for it. You want ammunition to fire an agency rather than a genuine assessment. Or the spend is small enough that the oversight would cost a meaningful fraction of the media, in which case fix the tracking once and skip the governance layer.</p>
+        <p class="body card-body">You want someone to take over day-to-day campaign management - that is your agency's job and I am not competing for it. You want ammunition to fire an agency rather than a genuine assessment. Or the spend is small enough that the oversight would cost a meaningful fraction of the media, in which case fix the tracking once and skip the governance layer.</p>
       </article>
     </div>
   </section>
@@ -271,27 +273,6 @@
 
   <p class="mono copyright">© 2026 Marko Cvijić / Owned Media Director, Senior Partner and Founder, Funky Enterprises</p>
 </footer>
-
-<script>
-(function () {
-  var root = document.documentElement;
-  var stored = null;
-  try { stored = localStorage.getItem("mc-theme"); } catch (e) {}
-  if (stored === "light" || stored === "dark") root.setAttribute("data-theme", stored);
-
-  var btn = document.getElementById("theme-toggle");
-  if (!btn) return;
-  btn.addEventListener("click", function () {
-    var current = root.getAttribute("data-theme");
-    if (!current) {
-      current = window.matchMedia("(prefers-color-scheme: light)").matches ? "light" : "dark";
-    }
-    var next = current === "dark" ? "light" : "dark";
-    root.setAttribute("data-theme", next);
-    try { localStorage.setItem("mc-theme", next); } catch (e) {}
-  });
-})();
-</script>
 
 </body>
 </html>

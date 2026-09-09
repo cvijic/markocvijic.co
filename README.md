@@ -1,6 +1,6 @@
 # markocvijic.co
 
-Personal site of Marko Cvijić — Owned Media Director, Senior Partner and Founder at
+Personal site of Marko Cvijić - Owned Media Director, Senior Partner and Founder at
 [Funky Enterprises](https://funky.enterprises).
 
 Static site. No build step, no dependencies, no framework. Plain HTML plus one
@@ -23,16 +23,16 @@ Ten pages, one shared stylesheet. Directory-based clean URLs, so `/about/` is
 | `analytics-attribution/index.html` | `/analytics-attribution/` | Tracking integrity, attribution, AI-native operations, real audit findings. |
 | `about/index.html` | `/about/` | Why the center, box score, the role, track record, flagship case, how to engage. |
 | `writing/index.html` | `/writing/` | Selected LinkedIn posts, recurring themes, books, Funky Enterprises Show. |
-| `styles.css` | — | Hand-written CSS. Design tokens at the top, then reset, typography, layout, components. |
-| `404.html` | — | Styled not-found page for GitHub Pages. |
-| `assets/` | — | Portrait image. |
-| `favicon.svg` | — | Favicon. |
-| `CNAME` | — | Custom domain for GitHub Pages. Must contain `markocvijic.co`. |
-| `robots.txt`, `sitemap.xml` | — | Crawl directives and sitemap. All ten URLs are listed in the sitemap. |
-| `.nojekyll` | — | Tells GitHub Pages to serve files as-is, skipping Jekyll. |
+| `styles.css` | - | Hand-written CSS. Design tokens at the top, then reset, typography, layout, components. |
+| `404.html` | - | Styled not-found page for GitHub Pages. |
+| `assets/` | - | Portrait image. |
+| `favicon.svg` | - | Favicon. |
+| `CNAME` | - | Custom domain for GitHub Pages. Must contain `markocvijic.co`. |
+| `robots.txt`, `sitemap.xml` | - | Crawl directives and sitemap. All ten URLs are listed in the sitemap. |
+| `.nojekyll` | - | Tells GitHub Pages to serve files as-is, skipping Jekyll. |
 
 Every page shares the same `<head>`, header and footer. If you change the nav or
-the footer sitemap, change it on all ten — or regenerate them, see below.
+the footer sitemap, change it on all ten - or regenerate them, see below.
 
 ### Adding a page
 
@@ -60,10 +60,9 @@ python3 -m http.server 3000
 
 ## Theming
 
-Dark is the default. Light mode follows `prefers-color-scheme`, and the `Theme`
-button overrides it, storing the choice in `localStorage` under `mc-theme`.
-An inline script in `<head>` applies the stored choice before first paint so the
-page does not flash the wrong theme.
+One theme, light. There is no toggle and no `prefers-color-scheme` switching -
+every page declares `<meta name="color-scheme" content="light">` so browser
+chrome (form controls, scrollbars) matches instead of rendering dark.
 
 All colours live in CSS custom properties at the top of `styles.css`:
 
@@ -79,32 +78,32 @@ Everything is plain HTML, so edit it directly.
 
 ### Page-level components
 
-- **`.subhero`** — the top of every inner page: `.crumb`, `.subhero-title`,
+- **`.subhero`** - the top of every inner page: `.crumb`, `.subhero-title`,
   `.subhero-lede`, then two buttons.
-- **`.group`** — `.group-head` (number, `.group-title`, `.group-note`) wrapping a
+- **`.group`** - `.group-head` (number, `.group-title`, `.group-note`) wrapping a
   `.specs` grid of `.spec` items. The standard capability block.
-- **`.steps`** — the numbered process. `.step-num`, `.step-title`, one `<p>`.
-- **`.rules`** — numbered operating rules. `.rule-num` plus one `<p>`.
-- **`.rows`** — label/description pairs. `.row-key` is the label; add an
+- **`.steps`** - the numbered process. `.step-num`, `.step-title`, one `<p>`.
+- **`.rules`** - numbered operating rules. `.rule-num` plus one `<p>`.
+- **`.rows`** - label/description pairs. `.row-key` is the label; add an
   `a.row-more` for a link to another page and it lands under the description.
-- **`.cards` / `.cards-2` / `.cards-3`** — `.card`, `.card-accent` for the lime
+- **`.cards` / `.cards-2` / `.cards-3`** - `.card`, `.card-accent` for the lime
   border, `.card-title`, `.card-body`, `.card-note`.
-- **`.pills`** — the market or sector list.
-- **`.page-nav`** — the two links at the foot of every inner page.
+- **`.pills`** - the market or sector list.
+- **`.page-nav`** - the two links at the foot of every inner page.
 
 ### Homepage
 
-- **Stats** — the `.scores` block. One `.score` per number.
-- **Client list** — the `.client-band` list.
-- **Capabilities** — the `.svcs` grid. One `.svc` anchor per service, numbered
+- **Stats** - the `.scores` block. One `.score` per number.
+- **Client list** - the `.client-band` list.
+- **Capabilities** - the `.svcs` grid. One `.svc` anchor per service, numbered
   `.svc-num`, ending in a `.svc-go` label.
-- **Teasers** — `.teaser` is a two-column block used for the writing and about
+- **Teasers** - `.teaser` is a two-column block used for the writing and about
   previews, and for the portrait on `/about/`.
 
 ### Writing
 
-- **Posts** — `.post` links inside `.posts`. Newest first.
-- **Books and Show** — one section each on `/writing/`, straightforward markup.
+- **Posts** - `.post` links inside `.posts`. Newest first.
+- **Books and Show** - one section each on `/writing/`, straightforward markup.
 
 ## Deployment (GitHub Pages)
 
@@ -112,6 +111,17 @@ Everything is plain HTML, so edit it directly.
 2. Repository **Settings → Pages** → Source: *Deploy from a branch* → branch `main`, folder `/ (root)`.
 3. **Custom domain**: `markocvijic.co` → Save.
 4. Wait for the DNS check to pass, then tick **Enforce HTTPS**.
+
+### The HTTPS upgrade script
+
+GitHub Pages cannot issue a server-side redirect, and **Enforce HTTPS** can only
+be set from the Settings UI or with an `administration=write` token. Until it is
+ticked, a visitor who types the bare domain is served over plaintext. Every page
+therefore carries a small inline script in `<head>` that rewrites `http:` to
+`https:` client-side, skipping `localhost` and `127.0.0.1` so local preview still
+works. It is a fallback, not a substitute: it cannot protect the first request
+and it does not send HSTS. Once **Enforce HTTPS** is on, delete the script from
+all eleven files.
 
 ### DNS records at the registrar
 

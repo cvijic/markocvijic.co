@@ -3,7 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Analytics, Attribution and AI-Native Marketing Operations — Marko Cvijić</title>
+<meta name="color-scheme" content="light">
+<title>Analytics, Attribution and AI-Native Marketing Operations - Marko Cvijić</title>
 <meta name="author" content="Marko Cvijić">
 <meta name="description" content="Verified tracking, reconciliation, server-side and first-party measurement, multi-touch attribution, incrementality, margin-aware reporting that maps to the P&L, and the AI-native operations built on top of it.">
 <link rel="canonical" href="https://markocvijic.co/analytics-attribution/">
@@ -11,23 +12,25 @@
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Marko Cvijić">
 <meta property="og:url" content="https://markocvijic.co/analytics-attribution/">
-<meta property="og:title" content="Analytics, Attribution and AI-Native Marketing Operations — Marko Cvijić">
-<meta property="og:description" content="The layer everything else stands on. Verified tracking, honest attribution, reporting that maps to the P&L — and the AI-native operations built on top, never underneath.">
+<meta property="og:title" content="Analytics, Attribution and AI-Native Marketing Operations - Marko Cvijić">
+<meta property="og:description" content="The layer everything else stands on. Verified tracking, honest attribution, reporting that maps to the P&L - and the AI-native operations built on top, never underneath.">
 <meta property="og:image" content="https://markocvijic.co/assets/marko-cvijic.jpg">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:site" content="@MarkoCvijic">
 <meta name="twitter:creator" content="@MarkoCvijic">
-<meta name="twitter:title" content="Analytics, Attribution and AI-Native Marketing Operations — Marko Cvijić">
-<meta name="twitter:description" content="The layer everything else stands on. Verified tracking, honest attribution, reporting that maps to the P&L — and the AI-native operations built on top, never underneath.">
+<meta name="twitter:title" content="Analytics, Attribution and AI-Native Marketing Operations - Marko Cvijić">
+<meta name="twitter:description" content="The layer everything else stands on. Verified tracking, honest attribution, reporting that maps to the P&L - and the AI-native operations built on top, never underneath.">
 <meta name="twitter:image" content="https://markocvijic.co/assets/marko-cvijic.jpg">
 
 <script>
-/* apply stored theme before first paint */
+/* GitHub Pages cannot issue a server-side redirect, so push http to https here.
+   Remove once "Enforce HTTPS" is enabled in the repository Pages settings. */
 (function () {
-  try {
-    var t = localStorage.getItem("mc-theme");
-    if (t === "light" || t === "dark") document.documentElement.setAttribute("data-theme", t);
-  } catch (e) {}
+  var l = window.location;
+  if (l.protocol === "http:" && l.hostname.indexOf("localhost") === -1 &&
+      l.hostname !== "127.0.0.1") {
+    l.replace("https:" + l.href.substring(l.protocol.length));
+  }
 })();
 </script>
 
@@ -44,7 +47,7 @@
   "name": "Analytics and attribution",
   "serviceType": "Marketing analytics and revenue attribution consulting",
   "url": "https://markocvijic.co/analytics-attribution/",
-  "description": "The layer everything else stands on. Verified tracking, honest attribution, reporting that maps to the P&L — and the AI-native operations built on top, never underneath.",
+  "description": "The layer everything else stands on. Verified tracking, honest attribution, reporting that maps to the P&L - and the AI-native operations built on top, never underneath.",
   "provider": {
     "@type": "Person",
     "name": "Marko Cvijić",
@@ -64,7 +67,6 @@
 
 <header class="wrap site-header">
   <a class="brand" href="/">Marko Cvijić<span class="lime">.</span></a>
-  <button class="theme-toggle" type="button" id="theme-toggle" aria-label="Switch colour theme">Theme</button>
   <div class="header-right">
     <nav class="nav mono" aria-label="Primary">
       <a href="/#services">What I do</a>
@@ -84,7 +86,7 @@
   <section class="wrap subhero">
     <p class="mono crumb"><a href="/">Marko Cvijić</a> <span>/</span> <span>Analytics and attribution</span></p>
     <h1 class="h subhero-title">Analytics and attribution. <span class="lime">The paint.</span></h1>
-    <p class="body subhero-lede">Verified tracking, honest attribution, and reporting that maps to the P&amp;L rather than to a dashboard. This is the layer I am known for holding, and the one every other number on this site depends on — plus the AI-native operations I build on top of it, never underneath it.</p>
+    <p class="body subhero-lede">Verified tracking, honest attribution, and reporting that maps to the P&amp;L rather than to a dashboard. This is the layer I am known for holding, and the one every other number on this site depends on - plus the AI-native operations I build on top of it, never underneath it.</p>
     <div class="actions">
       <a class="btn btn-primary" href="https://calendly.com/funkyenterprises/30-minute-needs-assessment" target="_blank" rel="noopener noreferrer">Book a strategy call</a>
       <a class="btn btn-outline" href="/paid-media-oversight/">Paid media oversight</a>
@@ -95,7 +97,7 @@
     <p class="mono eyebrow">The problem</p>
     <h2 class="h section-title">Every decision above this layer inherits <span class="lime">its errors.</span></h2>
     <div class="body prose">
-      <p>This is the layer nobody wants to buy and everything else stands on. Budget allocation, channel strategy, bidding, hiring, board reporting — all of it is downstream of measurement. If the measurement is wrong, the decisions are wrong with complete confidence, and the reporting will look healthy the entire time.</p>
+      <p>This is the layer nobody wants to buy and everything else stands on. Budget allocation, channel strategy, bidding, hiring, board reporting - all of it is downstream of measurement. If the measurement is wrong, the decisions are wrong with complete confidence, and the reporting will look healthy the entire time.</p>
       <p>The failures are mundane and almost universal. Last-click attribution crediting the channel that closed the deal and defunding the channels that created it. A primary conversion pointing at an event the site stopped sending. Share of voice reported as one equation when it needs five, depending on what you are actually asking. Analytics and the back office producing revenue figures that differ by fifteen per cent, with a standing agreement not to mention it. A dashboard with forty metrics on it, none of which is the number the business is run on.</p>
       <p>I hold the paint here: the measurement, the attribution and the governance under everything else. Nobody applauds it, and every number anyone quotes depends on it.</p>
     </div>
@@ -127,7 +129,7 @@
         </div>
         <div class="spec">
           <p class="h spec-key">Consent and compliance</p>
-          <p class="body">Consent mode implemented so it satisfies the regulation without silently discarding half the data — a failure mode that is common, expensive and nearly invisible.</p>
+          <p class="body">Consent mode implemented so it satisfies the regulation without silently discarding half the data - a failure mode that is common, expensive and nearly invisible.</p>
         </div>
         <div class="spec">
           <p class="h spec-key">Data layer and governance</p>
@@ -161,7 +163,7 @@
         </div>
         <div class="spec">
           <p class="h spec-key">Margin-aware reporting</p>
-          <p class="body">Return calculated on contribution rather than revenue. Channels change rank — sometimes reverse entirely — once cost of goods, returns and fulfilment enter the equation.</p>
+          <p class="body">Return calculated on contribution rather than revenue. Channels change rank - sometimes reverse entirely - once cost of goods, returns and fulfilment enter the equation.</p>
         </div>
         <div class="spec">
           <p class="h spec-key">Share of voice, properly</p>
@@ -191,11 +193,11 @@
         </div>
         <div class="spec">
           <p class="h spec-key">Answer engine measurement</p>
-          <p class="body">What AI traffic is actually worth once you look at volumes instead of headlines. It is real, it converts differently, and it is currently a fraction of what the discourse implies — which is exactly why it should be measured rather than guessed.</p>
+          <p class="body">What AI traffic is actually worth once you look at volumes instead of headlines. It is real, it converts differently, and it is currently a fraction of what the discourse implies - which is exactly why it should be measured rather than guessed.</p>
         </div>
         <div class="spec">
           <p class="h spec-key">Operating capability</p>
-          <p class="body">Every business will run more AI than it can staff. The constraint is not the models, it is having someone who can tell whether the output is right — so I build the systems and train the people who own them.</p>
+          <p class="body">Every business will run more AI than it can staff. The constraint is not the models, it is having someone who can tell whether the output is right - so I build the systems and train the people who own them.</p>
         </div>
       </div>
     </div>
@@ -240,7 +242,7 @@
       </div>
       <div class="rule">
         <p class="mono rule-num">04</p>
-        <p class="body">Under a ninety per cent match rate triggers an attribution audit — adjusted for long-cycle B2B, where the realistic floor is much lower.</p>
+        <p class="body">Under a ninety per cent match rate triggers an attribution audit - adjusted for long-cycle B2B, where the realistic floor is much lower.</p>
       </div>
       <div class="rule">
         <p class="mono rule-num">05</p>
@@ -264,7 +266,7 @@
       </article>
       <article class="card">
         <h3 class="h card-title">A poor fit</h3>
-        <p class="body card-body">You want a prettier dashboard. You want the numbers presented more favourably. You need a tool implemented to spec and nothing questioned — a good analytics engineer is cheaper and faster for that. Or the organisation is not prepared to act on a finding that contradicts the current strategy, in which case the audit is an expense with no return.</p>
+        <p class="body card-body">You want a prettier dashboard. You want the numbers presented more favourably. You need a tool implemented to spec and nothing questioned - a good analytics engineer is cheaper and faster for that. Or the organisation is not prepared to act on a finding that contradicts the current strategy, in which case the audit is an expense with no return.</p>
       </article>
     </div>
   </section>
@@ -284,7 +286,7 @@
 
 <footer id="contact" class="wrap site-footer">
   <h2 class="h footer-title">Fix the number <span class="lime">everything else depends on.</span></h2>
-  <p class="body muted lede">Thirty minutes, no pitch. We look at whether your analytics, your ad platforms and your back office agree — and what it is costing you that they do not.</p>
+  <p class="body muted lede">Thirty minutes, no pitch. We look at whether your analytics, your ad platforms and your back office agree - and what it is costing you that they do not.</p>
   <div class="actions">
     <a class="btn btn-primary" href="https://calendly.com/funkyenterprises/30-minute-needs-assessment" target="_blank" rel="noopener noreferrer">Book a 30-minute call</a>
     <a class="footer-mail" href="mailto:mc@funky.enterprises">mc@funky.enterprises</a>
@@ -325,27 +327,6 @@
 
   <p class="mono copyright">© 2026 Marko Cvijić / Owned Media Director, Senior Partner and Founder, Funky Enterprises</p>
 </footer>
-
-<script>
-(function () {
-  var root = document.documentElement;
-  var stored = null;
-  try { stored = localStorage.getItem("mc-theme"); } catch (e) {}
-  if (stored === "light" || stored === "dark") root.setAttribute("data-theme", stored);
-
-  var btn = document.getElementById("theme-toggle");
-  if (!btn) return;
-  btn.addEventListener("click", function () {
-    var current = root.getAttribute("data-theme");
-    if (!current) {
-      current = window.matchMedia("(prefers-color-scheme: light)").matches ? "light" : "dark";
-    }
-    var next = current === "dark" ? "light" : "dark";
-    root.setAttribute("data-theme", next);
-    try { localStorage.setItem("mc-theme", next); } catch (e) {}
-  });
-})();
-</script>
 
 </body>
 </html>
