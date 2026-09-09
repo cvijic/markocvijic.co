@@ -3,23 +3,51 @@
 Personal site of Marko Cvijić — Owned Media Director, Senior Partner and Founder at
 [Funky Enterprises](https://funky.enterprises).
 
-Static site. No build step, no dependencies, no framework. Two files do the work:
-`index.html` and `styles.css`.
+Static site. No build step, no dependencies, no framework. Plain HTML plus one
+hand-written stylesheet.
 
-## Files
+## Structure
 
-| Path | Purpose |
-|---|---|
-| `index.html` | Front page. Sections: hero, box score, what I do, selected work, writing, books, show, off the clock, contact. |
-| `enterprise-seo/index.html` | Service page at `/enterprise-seo/`. Technical foundation, AI answer engines, content architecture, process, operating rules, track record. |
-| `ecommerce-seo/index.html` | Service page at `/ecommerce-seo/`. Catalog and crawl, revenue measurement, cross-border, the Agromarket case in phases. |
-| `styles.css` | Hand-written CSS. Design tokens at the top, then reset, typography, layout, components, service-page components. |
-| `404.html` | Styled not-found page for GitHub Pages. |
-| `assets/` | Portrait image. |
-| `favicon.svg` | Favicon. |
-| `CNAME` | Custom domain for GitHub Pages. Must contain `markocvijic.co`. |
-| `robots.txt`, `sitemap.xml` | Crawl directives and sitemap. |
-| `.nojekyll` | Tells GitHub Pages to serve files as-is, skipping Jekyll. |
+Ten pages, one shared stylesheet. Directory-based clean URLs, so `/about/` is
+`about/index.html`.
+
+| Path | URL | Purpose |
+|---|---|---|
+| `index.html` | `/` | Hub. Hero, box score, client band, the seven capabilities as cards, the flagship case, writing and about teasers. |
+| `business-consulting/index.html` | `/business-consulting/` | Commercial diagnosis, system design, governance, engagement model, fit. |
+| `enterprise-seo/index.html` | `/enterprise-seo/` | Technical foundation, AI answer engines, content architecture, process, operating rules, track record. |
+| `ecommerce-seo/index.html` | `/ecommerce-seo/` | Catalog and crawl, revenue measurement, cross-border, the Agromarket case in phases. |
+| `paid-media-oversight/index.html` | `/paid-media-oversight/` | Signal integrity, spend governance, six operating rules, fit. |
+| `reputation-management/index.html` | `/reputation-management/` | Boundaries stated first, diagnosis, owned foundation, standing and monitoring. |
+| `go-to-market/index.html` | `/go-to-market/` | Position, demand, convert, sectors, launch rules. |
+| `analytics-attribution/index.html` | `/analytics-attribution/` | Tracking integrity, attribution, AI-native operations, real audit findings. |
+| `about/index.html` | `/about/` | Why the center, box score, the role, track record, flagship case, how to engage. |
+| `writing/index.html` | `/writing/` | Selected LinkedIn posts, recurring themes, books, Funky Enterprises Show. |
+| `styles.css` | — | Hand-written CSS. Design tokens at the top, then reset, typography, layout, components. |
+| `404.html` | — | Styled not-found page for GitHub Pages. |
+| `assets/` | — | Portrait image. |
+| `favicon.svg` | — | Favicon. |
+| `CNAME` | — | Custom domain for GitHub Pages. Must contain `markocvijic.co`. |
+| `robots.txt`, `sitemap.xml` | — | Crawl directives and sitemap. All ten URLs are listed in the sitemap. |
+| `.nojekyll` | — | Tells GitHub Pages to serve files as-is, skipping Jekyll. |
+
+Every page shares the same `<head>`, header and footer. If you change the nav or
+the footer sitemap, change it on all ten — or regenerate them, see below.
+
+### Adding a page
+
+1. Create `new-slug/index.html` by copying an existing service page.
+2. Add it to the footer `What I do` list on all ten pages.
+3. Add it to `sitemap.xml`.
+4. Add it to the `.svcs` card grid on `index.html` if it is a capability.
+
+### Regenerating shared markup
+
+The HTML in this repo is the source of truth and can be edited by hand. It was
+originally emitted by a one-off Python generator that held the head, header and
+footer in one place; that generator is deliberately not in the repo, because the
+site's whole promise is that it has no build step. If you make the same edit
+across ten files often enough, resurrect a generator rather than editing by hand.
 
 ## Local preview
 
@@ -49,15 +77,34 @@ Change them in one place and the whole page follows.
 
 Everything is plain HTML, so edit it directly.
 
+### Page-level components
+
+- **`.subhero`** — the top of every inner page: `.crumb`, `.subhero-title`,
+  `.subhero-lede`, then two buttons.
+- **`.group`** — `.group-head` (number, `.group-title`, `.group-note`) wrapping a
+  `.specs` grid of `.spec` items. The standard capability block.
+- **`.steps`** — the numbered process. `.step-num`, `.step-title`, one `<p>`.
+- **`.rules`** — numbered operating rules. `.rule-num` plus one `<p>`.
+- **`.rows`** — label/description pairs. `.row-key` is the label; add an
+  `a.row-more` for a link to another page and it lands under the description.
+- **`.cards` / `.cards-2` / `.cards-3`** — `.card`, `.card-accent` for the lime
+  border, `.card-title`, `.card-body`, `.card-note`.
+- **`.pills`** — the market or sector list.
+- **`.page-nav`** — the two links at the foot of every inner page.
+
+### Homepage
+
 - **Stats** — the `.scores` block. One `.score` per number.
 - **Client list** — the `.client-band` list.
-- **Disciplines and selected work** — `.row` blocks: `.row-key` is the label, the
-  `<p>` is the description. Add `.row-more` for a link to a service page.
-- **Service pages** — `.group` wraps a heading plus a `.specs` grid of `.spec`
-  items. `.steps` is the numbered process, `.rules` the numbered operating rules,
-  `.pills` the market list, `.page-nav` the two links at the foot.
-- **Writing** — `.post` links. Newest first.
-- **Books, Show, Off the clock** — one section each, straightforward markup.
+- **Capabilities** — the `.svcs` grid. One `.svc` anchor per service, numbered
+  `.svc-num`, ending in a `.svc-go` label.
+- **Teasers** — `.teaser` is a two-column block used for the writing and about
+  previews, and for the portrait on `/about/`.
+
+### Writing
+
+- **Posts** — `.post` links inside `.posts`. Newest first.
+- **Books and Show** — one section each on `/writing/`, straightforward markup.
 
 ## Deployment (GitHub Pages)
 

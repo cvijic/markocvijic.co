@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Analytics, Attribution and AI-Native Marketing Operations — Marko Cvijić</title>
+<meta name="author" content="Marko Cvijić">
+<meta name="description" content="Verified tracking, reconciliation, server-side and first-party measurement, multi-touch attribution, incrementality, margin-aware reporting that maps to the P&L, and the AI-native operations built on top of it.">
+<link rel="canonical" href="https://markocvijic.co/analytics-attribution/">
+
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Marko Cvijić">
+<meta property="og:url" content="https://markocvijic.co/analytics-attribution/">
+<meta property="og:title" content="Analytics, Attribution and AI-Native Marketing Operations — Marko Cvijić">
+<meta property="og:description" content="The layer everything else stands on. Verified tracking, honest attribution, reporting that maps to the P&L — and the AI-native operations built on top, never underneath.">
+<meta property="og:image" content="https://markocvijic.co/assets/marko-cvijic.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@MarkoCvijic">
+<meta name="twitter:creator" content="@MarkoCvijic">
+<meta name="twitter:title" content="Analytics, Attribution and AI-Native Marketing Operations — Marko Cvijić">
+<meta name="twitter:description" content="The layer everything else stands on. Verified tracking, honest attribution, reporting that maps to the P&L — and the AI-native operations built on top, never underneath.">
+<meta name="twitter:image" content="https://markocvijic.co/assets/marko-cvijic.jpg">
+
+<script>
+/* apply stored theme before first paint */
+(function () {
+  try {
+    var t = localStorage.getItem("mc-theme");
+    if (t === "light" || t === "dark") document.documentElement.setAttribute("data-theme", t);
+  } catch (e) {}
+})();
+</script>
+
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700;800&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="/styles.css">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Analytics and attribution",
+  "serviceType": "Marketing analytics and revenue attribution consulting",
+  "url": "https://markocvijic.co/analytics-attribution/",
+  "description": "The layer everything else stands on. Verified tracking, honest attribution, reporting that maps to the P&L — and the AI-native operations built on top, never underneath.",
+  "provider": {
+    "@type": "Person",
+    "name": "Marko Cvijić",
+    "url": "https://markocvijic.co/",
+    "jobTitle": "Business Consultant, Commercial System Partner, Owned Media Director",
+    "worksFor": {
+      "@type": "Organization",
+      "name": "Funky Enterprises",
+      "url": "https://funky.enterprises"
+    }
+  },
+  "areaServed": ["Europe", "Middle East", "North America", "Australia"]
+}
+</script>
+</head>
+<body>
+
+<header class="wrap site-header">
+  <a class="brand" href="/">Marko Cvijić<span class="lime">.</span></a>
+  <button class="theme-toggle" type="button" id="theme-toggle" aria-label="Switch colour theme">Theme</button>
+  <div class="header-right">
+    <nav class="nav mono" aria-label="Primary">
+      <a href="/#services">What I do</a>
+      <a href="/enterprise-seo/">Enterprise SEO</a>
+      <a href="/ecommerce-seo/">Ecommerce SEO</a>
+      <a href="/writing/">Writing</a>
+      <a href="/about/">About</a>
+      <a href="/#contact">Contact</a>
+    </nav>
+    <a class="btn btn-primary header-cta" href="https://calendly.com/funkyenterprises/30-minute-needs-assessment" target="_blank" rel="noopener noreferrer">Book a call</a>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- SUBHERO -->
+  <section class="wrap subhero">
+    <p class="mono crumb"><a href="/">Marko Cvijić</a> <span>/</span> <span>Analytics and attribution</span></p>
+    <h1 class="h subhero-title">Analytics and attribution. <span class="lime">The paint.</span></h1>
+    <p class="body subhero-lede">Verified tracking, honest attribution, and reporting that maps to the P&amp;L rather than to a dashboard. This is the layer I am known for holding, and the one every other number on this site depends on — plus the AI-native operations I build on top of it, never underneath it.</p>
+    <div class="actions">
+      <a class="btn btn-primary" href="https://calendly.com/funkyenterprises/30-minute-needs-assessment" target="_blank" rel="noopener noreferrer">Book a strategy call</a>
+      <a class="btn btn-outline" href="/paid-media-oversight/">Paid media oversight</a>
+    </div>
+  </section>
+  <!-- THE PROBLEM -->
+  <section class="wrap section">
+    <p class="mono eyebrow">The problem</p>
+    <h2 class="h section-title">Every decision above this layer inherits <span class="lime">its errors.</span></h2>
+    <div class="body prose">
+      <p>This is the layer nobody wants to buy and everything else stands on. Budget allocation, channel strategy, bidding, hiring, board reporting — all of it is downstream of measurement. If the measurement is wrong, the decisions are wrong with complete confidence, and the reporting will look healthy the entire time.</p>
+      <p>The failures are mundane and almost universal. Last-click attribution crediting the channel that closed the deal and defunding the channels that created it. A primary conversion pointing at an event the site stopped sending. Share of voice reported as one equation when it needs five, depending on what you are actually asking. Analytics and the back office producing revenue figures that differ by fifteen per cent, with a standing agreement not to mention it. A dashboard with forty metrics on it, none of which is the number the business is run on.</p>
+      <p>I hold the paint here: the measurement, the attribution and the governance under everything else. Nobody applauds it, and every number anyone quotes depends on it.</p>
+    </div>
+  </section>
+
+  <!-- CAPABILITIES -->
+  <section class="wrap section">
+    <p class="mono eyebrow">What the work covers</p>
+    <h2 class="h section-title">Verified data, then <span class="lime">honest attribution.</span></h2>
+
+    <div class="group">
+      <div class="group-head">
+        <p class="mono muted">01</p>
+        <h3 class="h group-title">Tracking integrity</h3>
+        <p class="mono group-note">Verified, not assumed</p>
+      </div>
+      <div class="specs">
+        <div class="spec">
+          <p class="h spec-key">Full measurement audit</p>
+          <p class="body">Every event, every conversion, every property and every integration: what fires it, when it was built, whether it still works, whether it double-counts, and whether anyone still uses what it produces.</p>
+        </div>
+        <div class="spec">
+          <p class="h spec-key">Reconciliation</p>
+          <p class="body">Analytics against the ad platforms against the back office. Where they disagree, by how much, and which one is right. Establishing the size of the gap is often more valuable than closing it.</p>
+        </div>
+        <div class="spec">
+          <p class="h spec-key">Server-side and first-party</p>
+          <p class="body">Server-side tagging, first-party data collection and enhanced conversions where the client-side path has degraded past usefulness. Built to survive the next browser change rather than the last one.</p>
+        </div>
+        <div class="spec">
+          <p class="h spec-key">Consent and compliance</p>
+          <p class="body">Consent mode implemented so it satisfies the regulation without silently discarding half the data — a failure mode that is common, expensive and nearly invisible.</p>
+        </div>
+        <div class="spec">
+          <p class="h spec-key">Data layer and governance</p>
+          <p class="body">A documented data layer, a naming convention, an owner, and a change process. Measurement decays because nobody owns it; this is the fix.</p>
+        </div>
+        <div class="spec">
+          <p class="h spec-key">Quarterly re-verification</p>
+          <p class="body">Sites change and events break. Every primary conversion gets re-checked on a schedule, because the systems consuming that signal do not stop when it fails.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="group">
+      <div class="group-head">
+        <p class="mono muted">02</p>
+        <h3 class="h group-title">Attribution</h3>
+        <p class="mono group-note">Which euro did what</p>
+      </div>
+      <div class="specs">
+        <div class="spec">
+          <p class="h spec-key">Multi-touch attribution</p>
+          <p class="body">A model that reflects how your customers actually buy, with the assumptions written down and the limitations stated. Every model is wrong in a specific way; you should know which way yours is wrong.</p>
+        </div>
+        <div class="spec">
+          <p class="h spec-key">Incrementality</p>
+          <p class="body">Separating demand you generated from demand you harvested. Brand search, retargeting and shopping on your own product names are where paid most often takes credit for revenue that was already coming.</p>
+        </div>
+        <div class="spec">
+          <p class="h spec-key">Offline and long-cycle</p>
+          <p class="body">Deals that close on a phone call, in a showroom or nine months later, connected back to the origin. Without this, every long-cycle channel looks unprofitable and gets cut.</p>
+        </div>
+        <div class="spec">
+          <p class="h spec-key">Margin-aware reporting</p>
+          <p class="body">Return calculated on contribution rather than revenue. Channels change rank — sometimes reverse entirely — once cost of goods, returns and fulfilment enter the equation.</p>
+        </div>
+        <div class="spec">
+          <p class="h spec-key">Share of voice, properly</p>
+          <p class="body">Five equations, not one, depending on whether you are asking about visibility, click share, category share, paid coverage or answer-engine presence. Collapsing them into a single figure is how a market gets misread.</p>
+        </div>
+        <div class="spec">
+          <p class="h spec-key">Reporting to the P&amp;L</p>
+          <p class="body">One report, in the language of the person who owns the number, with a small number of lines that map to how the business is run. Diagnostics live underneath it, not on it.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="group">
+      <div class="group-head">
+        <p class="mono muted">03</p>
+        <h3 class="h group-title">AI-native operations</h3>
+        <p class="mono group-note">Built on top, never underneath</p>
+      </div>
+      <div class="specs">
+        <div class="spec">
+          <p class="h spec-key">Semi-autonomous systems</p>
+          <p class="body">AI-powered marketing systems that scale: monitoring, classification, briefing, drafting and reporting handled by machines, with a human owner on every output that touches a customer or a budget.</p>
+        </div>
+        <div class="spec">
+          <p class="h spec-key">Where AI does not belong</p>
+          <p class="body">Automation applied to an unverified data layer produces wrong decisions faster and more consistently than a person would. Measurement gets fixed first. This ordering is not negotiable.</p>
+        </div>
+        <div class="spec">
+          <p class="h spec-key">Answer engine measurement</p>
+          <p class="body">What AI traffic is actually worth once you look at volumes instead of headlines. It is real, it converts differently, and it is currently a fraction of what the discourse implies — which is exactly why it should be measured rather than guessed.</p>
+        </div>
+        <div class="spec">
+          <p class="h spec-key">Operating capability</p>
+          <p class="body">Every business will run more AI than it can staff. The constraint is not the models, it is having someone who can tell whether the output is right — so I build the systems and train the people who own them.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHAT AUDITS FIND -->
+  <section class="wrap section">
+    <p class="mono eyebrow">From real audits</p>
+    <h2 class="h section-title">What this actually <span class="lime">turns up.</span></h2>
+    <div class="cards cards-3">
+      <article class="card card-accent">
+        <h3 class="h card-title">Bidding toward nothing</h3>
+        <p class="body card-body">A primary conversion action imported eighteen months earlier from an analytics event the site no longer sent. Smart Bidding had been optimising toward a conversion that never fired, at full spend, for a year and a half.</p>
+      </article>
+      <article class="card">
+        <h3 class="h card-title">A match rate that was fine</h3>
+        <p class="body card-body">Forty-six per cent between ads and analytics, escalated as a crisis. For a long-cycle B2B business that is a normal figure. The genuine problem was three tables away, and a month nearly went into the wrong one.</p>
+      </article>
+      <article class="card">
+        <h3 class="h card-title">Budget eaten by crawl</h3>
+        <p class="body card-body">Faceted navigation generating tens of thousands of near-duplicate URLs inside a large catalog, absorbing crawl budget that never reached the pages that sell. Visible only in the logs, invisible in every report.</p>
+      </article>
+    </div>
+  </section>
+
+  <!-- OPERATING RULES -->
+  <section class="wrap section">
+    <p class="mono eyebrow">Operating rules</p>
+    <h2 class="h section-title">The rules that make the number <span class="lime">defensible.</span></h2>
+    <div class="rules">
+      <div class="rule">
+        <p class="mono rule-num">01</p>
+        <p class="body">One number, defined once, written down. If two teams disagree about what a conversion is, nothing else discussed in that meeting means anything.</p>
+      </div>
+      <div class="rule">
+        <p class="mono rule-num">02</p>
+        <p class="body">Verify before reporting. No performance commentary on data that has not been checked against a second source.</p>
+      </div>
+      <div class="rule">
+        <p class="mono rule-num">03</p>
+        <p class="body">State the model's limitations alongside its output. An attribution model presented without its assumptions is a claim, not a measurement.</p>
+      </div>
+      <div class="rule">
+        <p class="mono rule-num">04</p>
+        <p class="body">Under a ninety per cent match rate triggers an attribution audit — adjusted for long-cycle B2B, where the realistic floor is much lower.</p>
+      </div>
+      <div class="rule">
+        <p class="mono rule-num">05</p>
+        <p class="body">If the honest answer is that we cannot know, that is the answer. Manufacturing a confident figure to fill a slide is worse than an admitted gap.</p>
+      </div>
+      <div class="rule">
+        <p class="mono rule-num">06</p>
+        <p class="body">Fix measurement before automating anything on top of it. Otherwise you have built a machine for being wrong at scale.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHO IT IS FOR -->
+  <section class="wrap section">
+    <p class="mono eyebrow">Fit</p>
+    <h2 class="h section-title">Who this is <span class="lime">actually for.</span></h2>
+    <div class="cards cards-2">
+      <article class="card card-accent">
+        <h3 class="h card-title">A good fit</h3>
+        <p class="body card-body">Your analytics and your back office do not agree and nobody has resolved it. You are allocating significant budget on last-click data. A board or an investor is asking questions the reporting cannot answer. You are about to automate marketing operations and want the foundation checked first. Or you have several markets and properties with no consistent definition across them.</p>
+      </article>
+      <article class="card">
+        <h3 class="h card-title">A poor fit</h3>
+        <p class="body card-body">You want a prettier dashboard. You want the numbers presented more favourably. You need a tool implemented to spec and nothing questioned — a good analytics engineer is cheaper and faster for that. Or the organisation is not prepared to act on a finding that contradicts the current strategy, in which case the audit is an expense with no return.</p>
+      </article>
+    </div>
+  </section>
+
+    <div class="page-nav">
+      <a href="/business-consulting/">
+        <span class="mono muted">Next</span>
+        <span class="h page-nav-title">Business consulting →</span>
+      </a>
+      <a href="/#services">
+        <span class="mono muted">Back</span>
+        <span class="h page-nav-title">All seven capabilities →</span>
+      </a>
+    </div>
+
+</main>
+
+<footer id="contact" class="wrap site-footer">
+  <h2 class="h footer-title">Fix the number <span class="lime">everything else depends on.</span></h2>
+  <p class="body muted lede">Thirty minutes, no pitch. We look at whether your analytics, your ad platforms and your back office agree — and what it is costing you that they do not.</p>
+  <div class="actions">
+    <a class="btn btn-primary" href="https://calendly.com/funkyenterprises/30-minute-needs-assessment" target="_blank" rel="noopener noreferrer">Book a 30-minute call</a>
+    <a class="footer-mail" href="mailto:mc@funky.enterprises">mc@funky.enterprises</a>
+  </div>
+
+  <div class="footer-cols">
+    <div class="footer-col">
+      <p class="mono footer-col-title">What I do</p>
+      <ul>
+        <li><a href="/business-consulting/">Business consulting</a></li>
+        <li><a href="/enterprise-seo/">Enterprise SEO</a></li>
+        <li><a href="/ecommerce-seo/">Ecommerce SEO</a></li>
+        <li><a href="/paid-media-oversight/">Paid media oversight</a></li>
+        <li><a href="/reputation-management/">Reputation management</a></li>
+        <li><a href="/go-to-market/">Go-to-market</a></li>
+        <li><a href="/analytics-attribution/">Analytics and attribution</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <p class="mono footer-col-title">More</p>
+      <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/writing/">Writing and books</a></li>
+        <li><a href="/about/">About</a></li>
+        <li><a href="mailto:mc@funky.enterprises">mc@funky.enterprises</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <p class="mono footer-col-title">Elsewhere</p>
+      <ul>
+        <li><a href="https://www.linkedin.com/in/markocvijic/" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+        <li><a href="https://x.com/MarkoCvijic" target="_blank" rel="noopener noreferrer">X (@MarkoCvijic)</a></li>
+        <li><a href="https://funky.enterprises/" target="_blank" rel="noopener noreferrer">Funky Enterprises</a></li>
+        <li><a href="https://www.youtube.com/channel/UC0qSXbNRgglmzqdhXdpuM3g" target="_blank" rel="noopener noreferrer">Funky Enterprises Show</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <p class="mono copyright">© 2026 Marko Cvijić / Owned Media Director, Senior Partner and Founder, Funky Enterprises</p>
+</footer>
+
+<script>
+(function () {
+  var root = document.documentElement;
+  var stored = null;
+  try { stored = localStorage.getItem("mc-theme"); } catch (e) {}
+  if (stored === "light" || stored === "dark") root.setAttribute("data-theme", stored);
+
+  var btn = document.getElementById("theme-toggle");
+  if (!btn) return;
+  btn.addEventListener("click", function () {
+    var current = root.getAttribute("data-theme");
+    if (!current) {
+      current = window.matchMedia("(prefers-color-scheme: light)").matches ? "light" : "dark";
+    }
+    var next = current === "dark" ? "light" : "dark";
+    root.setAttribute("data-theme", next);
+    try { localStorage.setItem("mc-theme", next); } catch (e) {}
+  });
+})();
+</script>
+
+</body>
+</html>
