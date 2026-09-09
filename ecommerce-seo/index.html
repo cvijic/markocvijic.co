@@ -43,23 +43,178 @@
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "Service",
-  "name": "Ecommerce SEO",
-  "serviceType": "Ecommerce search engine optimization consulting",
-  "url": "https://markocvijic.co/ecommerce-seo/",
-  "description": "Catalog-scale organic search for retailers and marketplaces. Faceted navigation, product architecture, feeds and cross-border - measured in revenue. +189% on the flagship two-year case.",
-  "provider": {
-    "@type": "Person",
-    "name": "Marko Cvijić",
-    "url": "https://markocvijic.co/",
-    "jobTitle": "Business Consultant, Commercial System Partner, Owned Media Director",
-    "worksFor": {
+  "@graph": [
+    {
+      "@type": "Person",
+      "@id": "https://markocvijic.co/#person",
+      "name": "Marko Cvijić",
+      "givenName": "Marko",
+      "familyName": "Cvijić",
+      "url": "https://markocvijic.co/",
+      "mainEntityOfPage": {
+        "@id": "https://markocvijic.co/about/#webpage"
+      },
+      "image": {
+        "@id": "https://markocvijic.co/#portrait"
+      },
+      "jobTitle": "Business Consultant, Commercial System Partner, Owned Media Director",
+      "description": "Business consultant and commercial system partner. Enterprise SEO, ecommerce SEO, paid media oversight for large ad spends, reputation management for high-profile business figures, and go-to-market for industrial and tech firms.",
+      "worksFor": {
+        "@id": "https://funky.enterprises/#organization"
+      },
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Belgrade",
+        "addressCountry": "RS"
+      },
+      "email": "mailto:mc@funky.enterprises",
+      "knowsLanguage": [
+        "en",
+        "sr"
+      ],
+      "knowsAbout": [
+        "Business consulting",
+        "Commercial system design",
+        "Enterprise SEO",
+        "Ecommerce SEO",
+        "Paid media oversight and budget governance",
+        "Reputation management",
+        "Go-to-market strategy",
+        "Analytics and revenue attribution",
+        "AI-native marketing operations"
+      ],
+      "sameAs": [
+        "https://www.linkedin.com/in/markocvijic/",
+        "https://x.com/MarkoCvijic",
+        "https://funky.enterprises/team/marko-cvijic"
+      ]
+    },
+    {
       "@type": "Organization",
+      "@id": "https://funky.enterprises/#organization",
       "name": "Funky Enterprises",
-      "url": "https://funky.enterprises"
+      "url": "https://funky.enterprises",
+      "description": "Commercial system partner rather than an agency. Five senior partners plus six senior specialists engaged as internal vendors, and no juniors.",
+      "founder": {
+        "@id": "https://markocvijic.co/#person"
+      },
+      "member": {
+        "@id": "https://markocvijic.co/#person"
+      },
+      "areaServed": [
+        {
+          "@type": "Place",
+          "name": "Europe"
+        },
+        {
+          "@type": "Place",
+          "name": "Middle East"
+        },
+        {
+          "@type": "Place",
+          "name": "North America"
+        },
+        {
+          "@type": "Place",
+          "name": "Australia"
+        }
+      ]
+    },
+    {
+      "@type": "ImageObject",
+      "@id": "https://markocvijic.co/#portrait",
+      "url": "https://markocvijic.co/assets/marko-cvijic.jpg",
+      "contentUrl": "https://markocvijic.co/assets/marko-cvijic.jpg",
+      "width": 800,
+      "height": 800,
+      "caption": "Marko Cvijić"
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://markocvijic.co/#website",
+      "url": "https://markocvijic.co/",
+      "name": "Marko Cvijić",
+      "description": "Business consultant and commercial system partner. Enterprise SEO, ecommerce SEO, paid media oversight for large ad spends, reputation management for high-profile business figures, and go-to-market for industrial and tech firms.",
+      "inLanguage": "en",
+      "publisher": {
+        "@id": "https://markocvijic.co/#person"
+      },
+      "copyrightHolder": {
+        "@id": "https://markocvijic.co/#person"
+      }
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://markocvijic.co/ecommerce-seo/#webpage",
+      "url": "https://markocvijic.co/ecommerce-seo/",
+      "name": "Ecommerce SEO Consultant - Catalog Scale, Revenue Not Rankings | Marko Cvijić",
+      "description": "Ecommerce SEO for retailers and marketplaces: faceted navigation control, category and product architecture, feeds, cross-border expansion, and reporting in revenue rather than rankings. +189% revenue on the flagship case.",
+      "isPartOf": {
+        "@id": "https://markocvijic.co/#website"
+      },
+      "inLanguage": "en",
+      "about": {
+        "@id": "https://markocvijic.co/#person"
+      },
+      "breadcrumb": {
+        "@id": "https://markocvijic.co/ecommerce-seo/#breadcrumb"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://markocvijic.co/ecommerce-seo/#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Marko Cvijić",
+          "item": "https://markocvijic.co/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Ecommerce SEO",
+          "item": "https://markocvijic.co/ecommerce-seo/"
+        }
+      ]
+    },
+    {
+      "@type": "Service",
+      "@id": "https://markocvijic.co/ecommerce-seo/#service",
+      "name": "Ecommerce SEO",
+      "serviceType": "Ecommerce search engine optimization consulting",
+      "url": "https://markocvijic.co/ecommerce-seo/",
+      "description": "Ecommerce SEO for retailers and marketplaces: faceted navigation control, category and product architecture, feeds, cross-border expansion, and reporting in revenue rather than rankings. +189% revenue on the flagship case.",
+      "provider": {
+        "@id": "https://markocvijic.co/#person"
+      },
+      "areaServed": [
+        {
+          "@type": "Place",
+          "name": "Europe"
+        },
+        {
+          "@type": "Place",
+          "name": "Middle East"
+        },
+        {
+          "@type": "Place",
+          "name": "North America"
+        },
+        {
+          "@type": "Place",
+          "name": "Australia"
+        }
+      ],
+      "audience": {
+        "@type": "BusinessAudience",
+        "name": "Enterprise, ecommerce, industrial and government organisations"
+      },
+      "mainEntityOfPage": {
+        "@id": "https://markocvijic.co/ecommerce-seo/#webpage"
+      }
     }
-  },
-  "areaServed": ["Europe", "Middle East", "North America", "Australia"]
+  ]
 }
 </script>
 </head>

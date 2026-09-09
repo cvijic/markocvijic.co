@@ -43,38 +43,147 @@
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "Person",
-  "name": "Marko Cvijić",
-  "url": "https://markocvijic.co/",
-  "image": "https://markocvijic.co/assets/marko-cvijic.jpg",
-  "jobTitle": "Business Consultant, Commercial System Partner, Owned Media Director",
-  "description": "Business consultant and commercial system partner. Enterprise SEO, ecommerce SEO, paid media oversight for large ad spends, reputation management for high-profile business figures, and go-to-market for industrial and tech firms.",
-  "worksFor": {
-    "@type": "Organization",
-    "name": "Funky Enterprises",
-    "url": "https://funky.enterprises"
-  },
-  "address": {
-    "@type": "PostalAddress",
-    "addressLocality": "Belgrade",
-    "addressCountry": "RS"
-  },
-  "email": "mailto:mc@funky.enterprises",
-  "knowsAbout": [
-    "Business consulting",
-    "Commercial system design",
-    "Enterprise SEO",
-    "Ecommerce SEO",
-    "Paid media oversight and budget governance",
-    "Reputation management",
-    "Go-to-market strategy",
-    "Analytics and revenue attribution",
-    "AI-native marketing operations"
-  ],
-  "sameAs": [
-    "https://www.linkedin.com/in/markocvijic/",
-    "https://x.com/MarkoCvijic",
-    "https://funky.enterprises/team/marko-cvijic"
+  "@graph": [
+    {
+      "@type": "Person",
+      "@id": "https://markocvijic.co/#person",
+      "name": "Marko Cvijić",
+      "givenName": "Marko",
+      "familyName": "Cvijić",
+      "url": "https://markocvijic.co/",
+      "mainEntityOfPage": {
+        "@id": "https://markocvijic.co/about/#webpage"
+      },
+      "image": {
+        "@id": "https://markocvijic.co/#portrait"
+      },
+      "jobTitle": "Business Consultant, Commercial System Partner, Owned Media Director",
+      "description": "Business consultant and commercial system partner. Enterprise SEO, ecommerce SEO, paid media oversight for large ad spends, reputation management for high-profile business figures, and go-to-market for industrial and tech firms.",
+      "worksFor": {
+        "@id": "https://funky.enterprises/#organization"
+      },
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Belgrade",
+        "addressCountry": "RS"
+      },
+      "email": "mailto:mc@funky.enterprises",
+      "knowsLanguage": [
+        "en",
+        "sr"
+      ],
+      "knowsAbout": [
+        "Business consulting",
+        "Commercial system design",
+        "Enterprise SEO",
+        "Ecommerce SEO",
+        "Paid media oversight and budget governance",
+        "Reputation management",
+        "Go-to-market strategy",
+        "Analytics and revenue attribution",
+        "AI-native marketing operations"
+      ],
+      "sameAs": [
+        "https://www.linkedin.com/in/markocvijic/",
+        "https://x.com/MarkoCvijic",
+        "https://funky.enterprises/team/marko-cvijic"
+      ]
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://funky.enterprises/#organization",
+      "name": "Funky Enterprises",
+      "url": "https://funky.enterprises",
+      "description": "Commercial system partner rather than an agency. Five senior partners plus six senior specialists engaged as internal vendors, and no juniors.",
+      "founder": {
+        "@id": "https://markocvijic.co/#person"
+      },
+      "member": {
+        "@id": "https://markocvijic.co/#person"
+      },
+      "areaServed": [
+        {
+          "@type": "Place",
+          "name": "Europe"
+        },
+        {
+          "@type": "Place",
+          "name": "Middle East"
+        },
+        {
+          "@type": "Place",
+          "name": "North America"
+        },
+        {
+          "@type": "Place",
+          "name": "Australia"
+        }
+      ]
+    },
+    {
+      "@type": "ImageObject",
+      "@id": "https://markocvijic.co/#portrait",
+      "url": "https://markocvijic.co/assets/marko-cvijic.jpg",
+      "contentUrl": "https://markocvijic.co/assets/marko-cvijic.jpg",
+      "width": 800,
+      "height": 800,
+      "caption": "Marko Cvijić"
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://markocvijic.co/#website",
+      "url": "https://markocvijic.co/",
+      "name": "Marko Cvijić",
+      "description": "Business consultant and commercial system partner. Enterprise SEO, ecommerce SEO, paid media oversight for large ad spends, reputation management for high-profile business figures, and go-to-market for industrial and tech firms.",
+      "inLanguage": "en",
+      "publisher": {
+        "@id": "https://markocvijic.co/#person"
+      },
+      "copyrightHolder": {
+        "@id": "https://markocvijic.co/#person"
+      }
+    },
+    {
+      "@type": "AboutPage",
+      "@id": "https://markocvijic.co/about/#webpage",
+      "url": "https://markocvijic.co/about/",
+      "name": "About Marko Cvijić - Owned Media Director, Funky Enterprises",
+      "description": "Marko Cvijić, business consultant and commercial system partner in Belgrade. Owned Media Director, Senior Partner and Founder at Funky Enterprises. Fifteen years, 100+ organizations, 10+ markets, including the World Economic Forum, the UAE Government and Emirates Global Aluminium.",
+      "isPartOf": {
+        "@id": "https://markocvijic.co/#website"
+      },
+      "inLanguage": "en",
+      "about": {
+        "@id": "https://markocvijic.co/#person"
+      },
+      "breadcrumb": {
+        "@id": "https://markocvijic.co/about/#breadcrumb"
+      },
+      "mainEntity": {
+        "@id": "https://markocvijic.co/#person"
+      },
+      "primaryImageOfPage": {
+        "@id": "https://markocvijic.co/#portrait"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://markocvijic.co/about/#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Marko Cvijić",
+          "item": "https://markocvijic.co/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "About",
+          "item": "https://markocvijic.co/about/"
+        }
+      ]
+    }
   ]
 }
 </script>
@@ -166,7 +275,7 @@
     <div class="body prose">
       <p>Owned Media Director, Senior Partner and Founder at <a class="inlink" href="https://funky.enterprises/" target="_blank" rel="noopener noreferrer">Funky Enterprises</a>. My title inside the firm is the enterprise SEO and paid media oversight executive, which in practice means I own the two things that consume the most budget and produce the most argument: what organic search is worth, and whether the ad spend can be defended.</p>
       <p>Underneath both sits the same layer - verified measurement, honest attribution, and a governance process so it does not decay three months after handover. On top of it I build the AI-powered semi-autonomous systems that let a small team run operations that would otherwise need a department. That ordering matters: automation on an unverified data layer produces wrong decisions faster, and I have seen what that costs.</p>
-      <p>Funky Enterprises is a commercial system partner, not an agency. Five senior operators, no employees, no juniors learning on a client's account. Every engagement opens with a paid audit, we own the strategy and the build, and where the model fits we would rather share in what the system produces than bill by the hour. Sharper, not bigger.</p>
+      <p>Funky Enterprises is a commercial system partner, not an agency. Five senior partners, plus six more senior specialists engaged as internal vendors - eleven senior people, and no juniors learning on a client's account. Every engagement opens with a paid audit, we own the strategy and the build, and where the model fits we would rather share in what the system produces than bill by the hour. Sharper, not bigger.</p>
     </div>
   </section>
 

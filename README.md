@@ -72,6 +72,45 @@ All colours live in CSS custom properties at the top of `styles.css`:
 
 Change them in one place and the whole page follows.
 
+## Structured data
+
+Each page carries one `application/ld+json` block holding a single `@graph`.
+Four nodes are identical on every page and carry stable `@id`s, so crawlers
+reconcile them into one entity each rather than eleven near-duplicates:
+
+| `@id` | Type |
+|---|---|
+| `https://markocvijic.co/#person` | `Person` - Marko |
+| `https://funky.enterprises/#organization` | `Organization` - Funky Enterprises |
+| `https://markocvijic.co/#portrait` | `ImageObject` |
+| `https://markocvijic.co/#website` | `WebSite` |
+
+On top of those, each page adds its own nodes:
+
+| Page | Page-specific nodes |
+|---|---|
+| `/` | `ProfilePage`, `ItemList` of the seven capabilities |
+| the seven capability pages | `WebPage`, `BreadcrumbList`, `Service` |
+| `/writing/` | `CollectionPage`, `BreadcrumbList`, two `Book` nodes |
+| `/about/` | `AboutPage`, `BreadcrumbList` |
+| `404.html` | none, deliberately |
+
+Rules worth keeping if you edit it:
+
+- Every page repeats the four shared nodes in full rather than referencing them
+  by `@id` alone, so each page validates standalone.
+- The `*Page` node's `url`, `name` and `description` must match that page's
+  `<link rel="canonical">`, `<title>` and `<meta name="description">`. There is a
+  check for this.
+- Titles and descriptions are authored as plain text so the same string can be
+  reused verbatim in JSON-LD; the generator HTML-escapes them only on the way
+  into the `<head>`. Do not put `&amp;` in the JSON.
+- The two `Book` nodes carry no `datePublished`, `isbn`, `offers` or
+  `aggregateRating`, because neither book is out. Adding any of those would be a
+  false claim in markup, not just an SEO shortcut.
+- Breadcrumb `position` starts at 1 and the last item points at the page's own
+  canonical URL.
+
 ## Editing content
 
 Everything is plain HTML, so edit it directly.
