@@ -23,19 +23,53 @@
 <meta name="twitter:image" content="https://markocvijic.co/assets/marko-cvijic.jpg">
 
 <script>
-/* GA4. Gated on the live hostname so local preview and automated checks never
-   reach the property - there is nothing to filter out later. No consent gate
-   yet, see the README. */
+/* GA4 with Consent Mode v2, advanced mode.
+
+   Advanced, not basic: the tag loads for everyone, but every signal defaults to
+   "denied", so until the visitor accepts, GA4 sends cookieless pings - no
+   identifiers, no analytics cookie. That keeps modelled traffic numbers for
+   people who decline and sets nothing on their machine.
+
+   The two ad_* signals and ad_storage are never granted, by design. This site
+   runs no advertising, so there is nothing to ask permission for. If a Google
+   Ads tag is ever added here, the banner has to grow a second choice - do not
+   just flip these to "granted".
+
+   The library load is gated on the live hostname so local preview and automated
+   checks never reach the property. The consent state itself is read on every
+   hostname, so the banner is testable locally with the tag switched off. */
 (function () {
+  var KEY = "mc-consent", TTL = 31536000000, choice = null;
+  try {
+    var raw = localStorage.getItem(KEY), saved = raw && JSON.parse(raw);
+    if (saved && saved.v === 1 && typeof saved.ts === "number" &&
+        Date.now() - saved.ts < TTL) choice = saved.analytics;
+  } catch (e) { /* storage blocked - treat as no choice yet */ }
+  window.mcConsent = { key: KEY, ttl: TTL, choice: choice };
+
   if (!/(^|\.)markocvijic\.co$/.test(location.hostname)) return;
+  window.dataLayer = window.dataLayer || [];
+  window.gtag = function () { window.dataLayer.push(arguments); };
+
+  /* Defaults go in before gtag.js is appended, which is the whole point of
+     doing this here rather than in the banner script at the end of <body>.
+     A returning visitor's stored yes is applied as the default, so there is no
+     denied-then-update round trip and no flicker. */
+  gtag("consent", "default", {
+    ad_storage: "denied",
+    ad_user_data: "denied",
+    ad_personalization: "denied",
+    analytics_storage: choice === "granted" ? "granted" : "denied",
+    wait_for_update: 500
+  });
+  gtag("set", "ads_data_redaction", true);
+  gtag("js", new Date());
+  gtag("config", "G-7G684NYNZ5");
+
   var s = document.createElement("script");
   s.async = true;
   s.src = "https://www.googletagmanager.com/gtag/js?id=G-7G684NYNZ5";
   document.head.appendChild(s);
-  window.dataLayer = window.dataLayer || [];
-  window.gtag = function () { window.dataLayer.push(arguments); };
-  gtag("js", new Date());
-  gtag("config", "G-7G684NYNZ5");
 })();
 </script>
 
@@ -472,6 +506,7 @@
         <li><a href="/writing/">Writing and books</a></li>
         <li><a href="/about/">About</a></li>
         <li><a href="mailto:mc@funky.enterprises">mc@funky.enterprises</a></li>
+        <li><button type="button" class="consent-reopen">Analytics consent</button></li>
       </ul>
     </div>
     <div class="footer-col">
@@ -487,6 +522,62 @@
 
   <p class="mono copyright">© 2026 Marko Cvijić / Owned Media Director, Senior Partner and Founder, Funky Enterprises</p>
 </footer>
+
+<script>
+(function () {
+  var c = window.mcConsent;
+  if (!c) return;
+  var el = null;
+
+  function decide(value) {
+    c.choice = value;
+    try {
+      localStorage.setItem(c.key, JSON.stringify(
+        { v: 1, analytics: value, ts: Date.now() }));
+    } catch (e) { /* storage blocked - the choice holds for this page only */ }
+    if (window.gtag) gtag("consent", "update", { analytics_storage: value });
+    if (el) { el.remove(); el = null; }
+  }
+
+  /* Built from one HTML string rather than a pile of createElement calls, so
+     every class name appears as a real class attribute and the stylesheet
+     coverage check can see it. */
+  function open(focus) {
+    if (el) return;
+    var host = document.createElement("div");
+    host.innerHTML =
+      '<div class="consent" role="dialog" aria-label="Analytics consent" ' +
+        'tabindex="-1">' +
+        '<div class="consent-inner">' +
+          '<p class="consent-text">Google Analytics counts visits here. ' +
+          'Nothing is sold, shared or used for advertising. Until you accept, ' +
+          'no cookie is set and the visit is counted without any identifier. ' +
+          'You can change this from the footer any time.</p>' +
+          '<div class="consent-actions">' +
+            '<button type="button" class="consent-btn consent-accept" ' +
+              'data-consent="granted">Accept</button>' +
+            '<button type="button" class="consent-btn" ' +
+              'data-consent="denied">Decline</button>' +
+          '</div>' +
+        '</div>' +
+      '</div>';
+    el = host.firstChild;
+    el.addEventListener("click", function (ev) {
+      var b = ev.target.closest("[data-consent]");
+      if (b) decide(b.getAttribute("data-consent"));
+    });
+    document.body.appendChild(el);
+    if (focus) el.focus();
+  }
+
+  if (c.choice === null) open(false);
+
+  var reopen = document.querySelectorAll(".consent-reopen");
+  for (var i = 0; i < reopen.length; i++) {
+    reopen[i].addEventListener("click", function () { open(true); });
+  }
+})();
+</script>
 
 </body>
 </html>

@@ -1032,7 +1032,108 @@ a {
 }
 
 /* --------------------------------------------------------------------------
-   16. Motion
+   16. Consent banner
+
+   Injected by the script at the end of <body>, so these rules only ever apply
+   once. Accept and Decline are the same size and carry the same border - only
+   the fill differs. Making Decline harder to find would not be compliant, and
+   it is also just rude.
+   -------------------------------------------------------------------------- */
+
+.consent {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 50;
+  background: var(--surface);
+  border-top: 1.5px solid var(--text);
+  box-shadow: 0 -10px 30px rgba(17, 18, 16, 0.07);
+}
+
+.consent-inner {
+  max-width: var(--wrap);
+  margin: 0 auto;
+  padding: 20px var(--gutter);
+  display: grid;
+  gap: 18px;
+  align-items: center;
+}
+
+.consent-text {
+  font-family: var(--font-body);
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--muted);
+  max-width: 76ch;
+}
+
+.consent-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.consent-btn {
+  min-height: 46px;
+  padding: 0 22px;
+  border: 1.5px solid var(--text);
+  border-radius: 2px;
+  background: transparent;
+  color: var(--text);
+  font-family: var(--font-mono);
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 1;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  cursor: pointer;
+  transition: background-color 0.15s, color 0.15s, border-color 0.15s;
+}
+
+.consent-accept {
+  background: var(--lime);
+  border-color: var(--lime);
+  color: #0b0b0c;
+}
+
+.consent-btn:hover {
+  border-color: var(--lime);
+  color: var(--lime-text);
+}
+
+.consent-accept:hover {
+  background: var(--text);
+  border-color: var(--text);
+  color: var(--lime);
+}
+
+/* The withdraw-consent entry point in the footer. Styled to sit in the sitemap
+   list as if it were one of the links, because semantically it is a control. */
+.consent-reopen {
+  padding: 0;
+  border: 0;
+  background: none;
+  font-family: inherit;
+  font-size: 15px;
+  color: var(--text);
+  text-align: left;
+  cursor: pointer;
+}
+
+.consent-reopen:hover {
+  color: var(--lime-text);
+}
+
+@media (min-width: 820px) {
+  .consent-inner {
+    grid-template-columns: 1fr auto;
+    gap: 32px;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   17. Motion
    -------------------------------------------------------------------------- */
 
 @media (prefers-reduced-motion: reduce) {

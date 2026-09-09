@@ -90,19 +90,50 @@ Keeping it on `404.html` is intentional: the hit records the URL that was
 actually requested with the title `Page not found`, which is the cheapest way to
 find broken inbound links.
 
-### Consent - open item
+### Consent Mode v2, advanced mode
 
-There is no consent gate. The tag sets analytics cookies on first load for every
-visitor, including EU ones, which under GDPR and the ePrivacy Directive needs
-prior consent for anything beyond strictly necessary storage. Traffic here is
-low and non-commercial, so this is a small exposure rather than an urgent one,
-but it is real and it is not fixed. Two ways to close it:
+Nothing is stored on a visitor's machine until they say yes.
 
-- **Consent Mode v2 plus a banner.** Set `ad_storage`, `ad_user_data`,
-  `ad_personalization` and `analytics_storage` to `denied` by default, then
-  update on consent. Until consent is given GA4 sends cookieless pings, so you
-  keep modelled traffic numbers and lose user-level detail.
-- **Drop GA4 for a cookieless analytics tool.** No banner needed, less data.
+**Advanced**, not basic: the tag loads for everyone, but all four v2 signals -
+`ad_storage`, `ad_user_data`, `ad_personalization`, `analytics_storage` - default
+to `denied` with `wait_for_update: 500`. Until consent, GA4 sends **cookieless
+pings**: the visit is counted and modelled, no identifier is sent, no `_ga`
+cookie is written. `ads_data_redaction` is on.
+
+The three ad signals are **never** granted. The site runs no advertising, so
+there is nothing to ask permission for and asking would collect what it does not
+use. If a Google Ads tag is ever added here, the banner needs a second choice -
+do not just flip them to `granted`.
+
+Where the code lives:
+
+| Piece | Where | Why there |
+|---|---|---|
+| consent defaults + tag load | inline in `<head>` | defaults must be in `dataLayer` **before** `gtag.js` initialises |
+| banner injection + Accept/Decline | inline before `</body>` | it needs `document.body` |
+| styles | `styles.css` section 16 | |
+| withdraw entry point | `.consent-reopen` button in the footer `More` column | consent has to be revocable |
+
+The choice is kept in `localStorage` under `mc-consent` as
+`{v:1, analytics:"granted"|"denied", ts:…}` and **expires after 12 months**,
+after which the banner asks again. A returning yes is applied as the consent
+`default` rather than a `denied`-then-`update`, so there is no round trip and no
+flicker.
+
+Accept and Decline are the same size with the same border and differ only in
+fill. Making Decline harder to find would not be compliant, and it is also just
+rude.
+
+The banner script is **not** hostname-gated even though the tag load is, so the
+banner is testable in local preview with the tag switched off. It only calls
+`gtag` if the head script created it.
+
+Verified with Playwright, serving these files under the live hostname through
+request interception with every Google Analytics request aborted, so the checks
+never touch the property: banner shows on a first visit, the pre-consent hit
+carries `gcs=G100` with no `_ga` cookie, Decline persists and writes no cookie,
+Accept flips the hit to `gcs=G101` and sets `_ga`, the footer button reopens the
+banner, and a stored choice older than 12 months re-asks.
 
 ## Structured data
 
