@@ -1,0 +1,831 @@
+/* ==========================================================================
+   markocvijic.co
+   Marko Cvijic - Owned Media Director, Senior Partner & Founder,
+   Funky Enterprises
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. Tokens
+   -------------------------------------------------------------------------- */
+
+:root {
+  --bg: #0b0b0c;
+  --surface: #141517;
+  --line: #26282b;
+  --text: #f2f1eb;
+  --muted: #a3a69b;
+  --lime: #d4ff00;
+  --lime-text: #d4ff00;
+  --logo-filter: brightness(0) invert(1);
+
+  --wrap: 1120px;
+  --gutter: 24px;
+
+  --font-head: "Barlow Condensed", "Arial Narrow", ui-sans-serif, sans-serif;
+  --font-body: "IBM Plex Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, "SFMono-Regular", monospace;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    --bg: #f3f3ee;
+    --surface: #ffffff;
+    --line: #dcddd4;
+    --text: #111210;
+    --muted: #5e6158;
+    --lime: #d4ff00;
+    --lime-text: #4f6b00;
+    --logo-filter: brightness(0);
+  }
+}
+
+/* explicit override via toggle */
+:root[data-theme="dark"] {
+  --bg: #0b0b0c;
+  --surface: #141517;
+  --line: #26282b;
+  --text: #f2f1eb;
+  --muted: #a3a69b;
+  --lime-text: #d4ff00;
+  --logo-filter: brightness(0) invert(1);
+}
+
+:root[data-theme="light"] {
+  --bg: #f3f3ee;
+  --surface: #ffffff;
+  --line: #dcddd4;
+  --text: #111210;
+  --muted: #5e6158;
+  --lime-text: #4f6b00;
+  --logo-filter: brightness(0);
+}
+
+/* --------------------------------------------------------------------------
+   2. Reset & base
+   -------------------------------------------------------------------------- */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background-color: var(--bg);
+  color: var(--text);
+  font-family: var(--font-body);
+  font-weight: 400;
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+h1,
+h2,
+h3,
+p,
+ul,
+ol,
+figure {
+  margin: 0;
+}
+
+ul {
+  padding: 0;
+  list-style: none;
+}
+
+a {
+  color: inherit;
+}
+
+::selection {
+  background: var(--lime);
+  color: #0b0b0c;
+}
+
+:focus-visible {
+  outline: 2px solid var(--lime);
+  outline-offset: 3px;
+}
+
+/* --------------------------------------------------------------------------
+   3. Typography primitives
+   -------------------------------------------------------------------------- */
+
+.h {
+  font-family: var(--font-head);
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: -0.01em;
+  line-height: 0.92;
+}
+
+.mono {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.09em;
+}
+
+.body {
+  font-size: 17px;
+  line-height: 1.62;
+}
+
+.small {
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+.lime {
+  color: var(--lime-text);
+}
+
+.muted {
+  color: var(--muted);
+}
+
+.italic {
+  font-style: italic;
+}
+
+.nums {
+  font-variant-numeric: tabular-nums;
+}
+
+.dropcap::first-letter {
+  float: left;
+  font-family: var(--font-head);
+  font-weight: 800;
+  font-size: 76px;
+  line-height: 0.8;
+  padding-top: 6px;
+  padding-right: 12px;
+  color: var(--lime-text);
+}
+
+/* --------------------------------------------------------------------------
+   4. Layout
+   -------------------------------------------------------------------------- */
+
+.wrap {
+  max-width: var(--wrap);
+  margin: 0 auto;
+  padding-left: var(--gutter);
+  padding-right: var(--gutter);
+}
+
+.section {
+  border-top: 1px solid var(--line);
+  padding-top: 72px;
+  padding-bottom: 72px;
+  scroll-margin-top: 32px;
+}
+
+.eyebrow {
+  color: var(--muted);
+}
+
+.section-title {
+  margin-top: 20px;
+  font-size: clamp(34px, 7vw, 56px);
+}
+
+.lede {
+  margin-top: 28px;
+  max-width: 62ch;
+}
+
+.prose {
+  margin-top: 32px;
+  max-width: 68ch;
+}
+
+.prose > p + p {
+  margin-top: 24px;
+}
+
+/* --------------------------------------------------------------------------
+   5. Buttons & links
+   -------------------------------------------------------------------------- */
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 52px;
+  padding: 0 28px;
+  border-radius: 2px;
+  font-family: var(--font-mono);
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  text-decoration: none;
+  transition: opacity 0.15s, background-color 0.15s, color 0.15s,
+    border-color 0.15s, filter 0.15s;
+}
+
+.btn-primary {
+  background: var(--lime);
+  color: #0b0b0c;
+  border: 1.5px solid var(--lime);
+}
+
+.btn-primary:hover {
+  filter: brightness(0.92);
+}
+
+.btn-outline {
+  border: 1.5px solid var(--text);
+  color: var(--text);
+}
+
+.btn-outline:hover {
+  border-color: var(--lime);
+  color: var(--lime-text);
+}
+
+.textlink {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.09em;
+  color: var(--text);
+  text-decoration: none;
+  border-bottom: 1px solid var(--lime);
+  padding-bottom: 2px;
+}
+
+.textlink:hover {
+  opacity: 0.7;
+}
+
+.inlink {
+  color: var(--text);
+  text-decoration: none;
+  border-bottom: 1px solid var(--lime);
+}
+
+.inlink:hover {
+  opacity: 0.7;
+}
+
+.actions {
+  margin-top: 36px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 16px;
+}
+
+/* --------------------------------------------------------------------------
+   6. Header
+   -------------------------------------------------------------------------- */
+
+.site-header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding-top: 24px;
+  padding-bottom: 24px;
+}
+
+.brand {
+  font-family: var(--font-head);
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  font-size: 18px;
+  color: var(--text);
+  text-decoration: none;
+}
+
+.brand {
+  order: 1;
+}
+
+.theme-toggle {
+  order: 2;
+}
+
+.header-right {
+  order: 3;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 14px 24px;
+  width: 100%;
+}
+
+.header-cta {
+  display: none;
+}
+
+.nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+}
+
+.nav a {
+  color: var(--muted);
+  text-decoration: none;
+}
+
+.nav a:hover {
+  opacity: 0.7;
+}
+
+.theme-toggle {
+  appearance: none;
+  background: none;
+  border: 1px solid var(--line);
+  border-radius: 2px;
+  color: var(--muted);
+  cursor: pointer;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  padding: 8px 10px;
+  line-height: 1;
+  transition: color 0.15s, border-color 0.15s;
+}
+
+.theme-toggle:hover {
+  color: var(--text);
+  border-color: var(--lime);
+}
+
+@media (min-width: 900px) {
+  .header-right {
+    order: 2;
+    width: auto;
+    margin-left: auto;
+  }
+  .theme-toggle {
+    order: 3;
+  }
+  .header-cta {
+    display: inline-flex;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   7. Hero
+   -------------------------------------------------------------------------- */
+
+.hero {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 48px;
+  border-top: 0;
+  padding-top: 40px;
+}
+
+.hero-title {
+  margin-top: 24px;
+  font-size: clamp(44px, 9.2vw, 78px);
+}
+
+.hero-lede {
+  margin-top: 28px;
+  max-width: 54ch;
+}
+
+.hero-role {
+  margin-top: 20px;
+  max-width: 56ch;
+  font-size: 15px;
+  line-height: 1.65;
+}
+
+.hero-note {
+  margin-top: 16px;
+  line-height: 1.6;
+  font-size: 12px;
+}
+
+.portrait {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  background: #000;
+}
+
+.portrait img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.portrait figcaption {
+  position: absolute;
+  left: 12px;
+  bottom: 12px;
+  color: rgba(255, 255, 255, 0.85);
+}
+
+@media (min-width: 1000px) {
+  .hero {
+    grid-template-columns: 7fr 5fr;
+    align-items: start;
+    gap: 56px;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   8. Box score
+   -------------------------------------------------------------------------- */
+
+.section-meta {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.scores {
+  margin-top: 32px;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  border-top: 1px solid var(--line);
+}
+
+.score {
+  border-bottom: 1px solid var(--line);
+  border-right: 1px solid var(--line);
+  padding: 32px 16px;
+}
+
+.score:nth-child(2n) {
+  border-right: 0;
+}
+
+.score:nth-child(2n + 1) {
+  padding-left: 0;
+}
+
+.score-value {
+  font-family: var(--font-head);
+  font-weight: 800;
+  text-transform: uppercase;
+  line-height: 0.92;
+  font-size: clamp(38px, 8vw, 54px);
+  font-variant-numeric: tabular-nums;
+}
+
+.score-label {
+  margin-top: 12px;
+  max-width: 34ch;
+  line-height: 1.6;
+  color: var(--muted);
+}
+
+@media (min-width: 640px) {
+  .scores {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+  .score {
+    padding-left: 32px;
+    padding-right: 32px;
+  }
+  .score:nth-child(2n) {
+    border-right: 1px solid var(--line);
+  }
+  .score:nth-child(3n) {
+    border-right: 0;
+  }
+  .score:nth-child(2n + 1) {
+    padding-left: 32px;
+  }
+  .score:nth-child(3n + 1) {
+    padding-left: 0;
+  }
+}
+
+@media (min-width: 1000px) {
+  .scores {
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+  }
+  .score:nth-child(3n) {
+    border-right: 1px solid var(--line);
+  }
+  .score:nth-child(6n) {
+    border-right: 0;
+  }
+  .score:nth-child(3n + 1) {
+    padding-left: 32px;
+  }
+  .score:nth-child(6n + 1) {
+    padding-left: 0;
+  }
+}
+
+/* client band */
+.clients {
+  margin-top: 56px;
+}
+
+.logo-row-label {
+  color: var(--muted);
+  margin-bottom: 20px;
+}
+
+.client-band {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 10px 0;
+  font-size: clamp(19px, 2.4vw, 26px);
+  line-height: 1.15;
+}
+
+.client-band li {
+  display: inline-flex;
+  align-items: baseline;
+}
+
+.client-band li + li::before {
+  content: "/";
+  color: var(--lime-text);
+  margin: 0 14px;
+  font-weight: 700;
+}
+
+/* --------------------------------------------------------------------------
+   9. Discipline / definition rows
+   -------------------------------------------------------------------------- */
+
+.rows {
+  margin-top: 48px;
+  border-top: 1px solid var(--line);
+}
+
+.row {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 12px;
+  padding: 28px 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.row-key {
+  color: var(--lime-text);
+}
+
+@media (min-width: 700px) {
+  .row {
+    grid-template-columns: 4fr 8fr;
+    gap: 32px;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   10. Cards
+   -------------------------------------------------------------------------- */
+
+.cards {
+  margin-top: 40px;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+}
+
+@media (min-width: 800px) {
+  .cards-2 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .cards-3 {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+.card {
+  background-color: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 2px;
+  padding: 32px;
+}
+
+.card-accent {
+  border-color: var(--lime);
+}
+
+.card-title {
+  margin-top: 16px;
+  font-size: 32px;
+}
+
+.card-body {
+  margin-top: 16px;
+}
+
+.card-note {
+  margin-top: 16px;
+  color: var(--muted);
+}
+
+.callout {
+  margin-top: 48px;
+  background-color: var(--surface);
+  border-left: 4px solid var(--lime);
+  padding: 36px 28px;
+}
+
+.callout .actions {
+  margin-top: 28px;
+}
+
+/* --------------------------------------------------------------------------
+   11. Case highlight
+   -------------------------------------------------------------------------- */
+
+.case {
+  margin-top: 48px;
+  background-color: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 2px;
+  padding: 36px 28px;
+}
+
+.case-stats {
+  margin-top: 28px;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 28px 24px;
+}
+
+.case-stat-value {
+  font-family: var(--font-head);
+  font-weight: 800;
+  font-size: 44px;
+  line-height: 0.92;
+  font-variant-numeric: tabular-nums;
+  color: var(--lime-text);
+}
+
+.case-stat-label {
+  margin-top: 10px;
+  color: var(--muted);
+  line-height: 1.6;
+}
+
+@media (min-width: 800px) {
+  .case-stats {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
+
+/* --------------------------------------------------------------------------
+   12. Writing list
+   -------------------------------------------------------------------------- */
+
+.writing-intro {
+  margin-top: 32px;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 32px;
+}
+
+.writing-facts {
+  color: var(--muted);
+}
+
+.writing-facts li + li {
+  margin-top: 12px;
+}
+
+@media (min-width: 1000px) {
+  .writing-intro {
+    grid-template-columns: 4fr 8fr;
+    gap: 40px;
+  }
+}
+
+.posts {
+  margin-top: 48px;
+  border-top: 1px solid var(--line);
+}
+
+.post {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px 24px;
+  padding: 24px 0;
+  border-bottom: 1px solid var(--line);
+  color: var(--text);
+  text-decoration: none;
+  transition: opacity 0.15s;
+}
+
+.post:hover {
+  opacity: 0.62;
+}
+
+.post-title {
+  max-width: 62ch;
+  font-size: clamp(22px, 3.4vw, 30px);
+}
+
+.post-meta {
+  flex-shrink: 0;
+  color: var(--muted);
+}
+
+/* --------------------------------------------------------------------------
+   13. Stage / plain list rows
+   -------------------------------------------------------------------------- */
+
+.list-rows {
+  margin-top: 16px;
+  border-top: 1px solid var(--line);
+}
+
+.list-rows p {
+  padding: 16px 0;
+  border-bottom: 1px solid var(--line);
+}
+
+/* --------------------------------------------------------------------------
+   14. Footer
+   -------------------------------------------------------------------------- */
+
+.site-footer {
+  border-top: 1px solid var(--line);
+  padding-top: 72px;
+  padding-bottom: 72px;
+  scroll-margin-top: 32px;
+}
+
+.footer-title {
+  font-size: clamp(34px, 7vw, 56px);
+}
+
+.footer-mail {
+  display: inline-block;
+  font-family: var(--font-mono);
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text);
+  text-decoration: none;
+  border-bottom: 1px solid var(--lime);
+  padding-bottom: 3px;
+}
+
+.footer-links {
+  margin-top: 56px;
+  padding-top: 32px;
+  border-top: 1px solid var(--line);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px 32px;
+}
+
+.footer-links a {
+  color: var(--text);
+  text-decoration: none;
+}
+
+.footer-links a:hover {
+  opacity: 0.7;
+}
+
+.copyright {
+  margin-top: 56px;
+  color: var(--muted);
+  line-height: 1.7;
+}
+
+/* --------------------------------------------------------------------------
+   15. Motion
+   -------------------------------------------------------------------------- */
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  * {
+    transition: none !important;
+  }
+}
