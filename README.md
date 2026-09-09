@@ -72,6 +72,39 @@ All colours live in CSS custom properties at the top of `styles.css`:
 
 Change them in one place and the whole page follows.
 
+## Analytics
+
+GA4, property `G-7G684NYNZ5`, on all eleven pages including `404.html`. The tag
+is inline in `<head>` rather than loaded through a tag manager, because there is
+nothing else to manage.
+
+Two things about it are deliberate:
+
+1. **It sits after the HTTPS upgrade script.** If it fired first, a plaintext
+   visit would send a hit over `http`, redirect, then send a second one - two
+   `page_view` events and a session split across two origins. Keep this order.
+2. **It is gated on the live hostname** (`/(^|\.)markocvijic\.co$/`). Local
+   preview and automated checks never reach the property, so you do not have to
+   remember to filter your own traffic out.
+
+Keeping it on `404.html` is intentional: the hit records the URL that was
+actually requested with the title `Page not found`, which is the cheapest way to
+find broken inbound links.
+
+### Consent - open item
+
+There is no consent gate. The tag sets analytics cookies on first load for every
+visitor, including EU ones, which under GDPR and the ePrivacy Directive needs
+prior consent for anything beyond strictly necessary storage. Traffic here is
+low and non-commercial, so this is a small exposure rather than an urgent one,
+but it is real and it is not fixed. Two ways to close it:
+
+- **Consent Mode v2 plus a banner.** Set `ad_storage`, `ad_user_data`,
+  `ad_personalization` and `analytics_storage` to `denied` by default, then
+  update on consent. Until consent is given GA4 sends cookieless pings, so you
+  keep modelled traffic numbers and lose user-level detail.
+- **Drop GA4 for a cookieless analytics tool.** No banner needed, less data.
+
 ## Structured data
 
 Each page carries one `application/ld+json` block holding a single `@graph`.

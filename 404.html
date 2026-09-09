@@ -17,6 +17,28 @@
   }
 })();
 </script>
+
+<script>
+/* GA4. Placed after the protocol upgrade above on purpose: firing first would
+   send a hit over http, redirect, then send a second one - two page_views and a
+   session split. Gated on the live hostname so local preview stays out of the
+   property. No consent gate yet, see the README.
+   Worth keeping on this page: the hit records the URL that was actually
+   requested with the title "Page not found", which is how broken inbound links
+   get found. */
+(function () {
+  if (!/(^|\.)markocvijic\.co$/.test(location.hostname)) return;
+  var s = document.createElement("script");
+  s.async = true;
+  s.src = "https://www.googletagmanager.com/gtag/js?id=G-7G684NYNZ5";
+  document.head.appendChild(s);
+  window.dataLayer = window.dataLayer || [];
+  window.gtag = function () { window.dataLayer.push(arguments); };
+  gtag("js", new Date());
+  gtag("config", "G-7G684NYNZ5");
+})();
+</script>
+
 <link rel="icon" type="image/svg+xml" href="/favicon.svg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
