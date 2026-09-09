@@ -7,22 +7,9 @@
 <title>Page not found - Marko Cvijić</title>
 <meta name="robots" content="noindex">
 <script>
-/* GitHub Pages cannot issue a server-side redirect, so push http to https here.
-   Remove once "Enforce HTTPS" is enabled in the repository Pages settings. */
-(function () {
-  var l = window.location;
-  if (l.protocol === "http:" && l.hostname.indexOf("localhost") === -1 &&
-      l.hostname !== "127.0.0.1") {
-    l.replace("https:" + l.href.substring(l.protocol.length));
-  }
-})();
-</script>
-
-<script>
-/* GA4. Placed after the protocol upgrade above on purpose: firing first would
-   send a hit over http, redirect, then send a second one - two page_views and a
-   session split. Gated on the live hostname so local preview stays out of the
-   property. No consent gate yet, see the README.
+/* GA4. Gated on the live hostname so local preview and automated checks never
+   reach the property - there is nothing to filter out later. No consent gate
+   yet, see the README.
    Worth keeping on this page: the hit records the URL that was actually
    requested with the title "Page not found", which is how broken inbound links
    get found. */

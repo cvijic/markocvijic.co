@@ -78,14 +78,13 @@ GA4, property `G-7G684NYNZ5`, on all eleven pages including `404.html`. The tag
 is inline in `<head>` rather than loaded through a tag manager, because there is
 nothing else to manage.
 
-Two things about it are deliberate:
+It is **gated on the live hostname** (`/(^|\.)markocvijic\.co$/`), so local
+preview and automated checks never reach the property and you do not have to
+remember to filter your own traffic out.
 
-1. **It sits after the HTTPS upgrade script.** If it fired first, a plaintext
-   visit would send a hit over `http`, redirect, then send a second one - two
-   `page_view` events and a session split across two origins. Keep this order.
-2. **It is gated on the live hostname** (`/(^|\.)markocvijic\.co$/`). Local
-   preview and automated checks never reach the property, so you do not have to
-   remember to filter your own traffic out.
+A plaintext visit produces one `page_view`, not two, because GitHub's `301`
+fires before the page is parsed and the tag only ever runs on the `https` URL.
+Worth re-checking if anything about the redirect ever changes.
 
 Keeping it on `404.html` is intentional: the hit records the URL that was
 actually requested with the title `Page not found`, which is the cheapest way to
@@ -184,16 +183,22 @@ Everything is plain HTML, so edit it directly.
 3. **Custom domain**: `markocvijic.co` → Save.
 4. Wait for the DNS check to pass, then tick **Enforce HTTPS**.
 
-### The HTTPS upgrade script
+### HTTPS
 
-GitHub Pages cannot issue a server-side redirect, and **Enforce HTTPS** can only
-be set from the Settings UI or with an `administration=write` token. Until it is
-ticked, a visitor who types the bare domain is served over plaintext. Every page
-therefore carries a small inline script in `<head>` that rewrites `http:` to
-`https:` client-side, skipping `localhost` and `127.0.0.1` so local preview still
-works. It is a fallback, not a substitute: it cannot protect the first request
-and it does not send HSTS. Once **Enforce HTTPS** is on, delete the script from
-all eleven files.
+**Enforce HTTPS** is on. GitHub issues a real `301` from `http://` to `https://`
+on both the apex and `www`, preserving the path, and `www` lands on the apex in a
+single hop. The certificate is Let's Encrypt, renewed by GitHub.
+
+There used to be an inline `http:` to `https:` rewrite script in every `<head>`,
+because **Enforce HTTPS** can only be set from the Settings UI or with an
+`administration=write` token. It has been removed - the 301 happens before any
+markup is parsed, so the script was dead weight. Do not add it back.
+
+One thing GitHub Pages does **not** do on a custom domain is send
+`Strict-Transport-Security`. There is no HSTS and no preload, so a first-ever
+visit to `http://` still makes one plaintext request before the redirect. That is
+unavoidable without a proxy in front - Cloudflare would add HSTS if it ever
+matters enough.
 
 ### DNS records at the registrar
 
